@@ -292,9 +292,10 @@ function HomeClient() {
                 </p>
                 <a
                   href='http://hiyori.webn.cc/Anime4K.zip'
+                  download='Anime4K.zip'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center rounded-lg bg-green-600 px-3 py-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm mb-2'
+                  className='inline-flex items-center rounded-lg bg-green-600 px-3 py-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm mb-2 cursor-pointer'
                 >
                   <svg className='w-4 h-4 mr-1' viewBox='0 0 24 24' fill='currentColor'>
                     <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z'/>
