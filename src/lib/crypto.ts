@@ -1,7 +1,16 @@
 // 加密解密工具
 
 import CryptoJS from 'crypto-js';
-import bs58 from 'bs58';
+
+let bs58: any = null;
+
+async function getBs58() {
+  if (!bs58) {
+    const module = await import('bs58');
+    bs58 = module.default || module;
+  }
+  return bs58;
+}
 
 export class CryptoUtils {
   private static readonly DEFAULT_KEY = 'moontv-default-key-2024';
@@ -71,21 +80,23 @@ export class CryptoUtils {
   /**
    * Base58 编码
    */
-  static base58Encode(text: string): string {
+  static async base58Encode(text: string): Promise<string> {
     const bytes = CryptoJS.enc.Utf8.parse(text);
     const uint8Array = new Uint8Array(bytes.sigBytes);
     for (let i = 0; i < bytes.sigBytes; i++) {
       uint8Array[i] = (bytes.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
     }
-    return bs58.encode(uint8Array);
+    const bs58Module = await getBs58();
+    return bs58Module.encode(uint8Array);
   }
 
   /**
    * Base58 解码
    */
-  static base58Decode(encodedText: string): string {
+  static async base58Decode(encodedText: string): Promise<string> {
     try {
-      const decoded = bs58.decode(encodedText);
+      const bs58Module = await getBs58();
+      const decoded = bs58Module.decode(encodedText);
       return CryptoJS.enc.Utf8.stringify(
         CryptoJS.lib.WordArray.create(decoded)
       );
