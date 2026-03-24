@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const nextConfig = {
-  output: process.env.CF_PAGES === '1' ? 'export' : 'standalone',
   eslint: {
     dirs: ['src'],
   },
