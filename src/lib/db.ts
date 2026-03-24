@@ -2,31 +2,20 @@
 
 import { AdminConfig } from './admin.types';
 import { D1Storage } from './d1.db';
-import { RedisStorage } from './redis.db';
 import { Favorite, IStorage, PlayRecord, SkipConfig } from './types';
-import { UpstashRedisStorage } from './upstash.db';
 
-// storage type 常量: 'localstorage' | 'redis' | 'd1' | 'upstash'，默认 'localstorage'
+// storage type 常量: 'localstorage' | 'd1'，默认 'd1'
 const STORAGE_TYPE =
-  (process.env.NEXT_PUBLIC_STORAGE_TYPE as
-    | 'localstorage'
-    | 'redis'
-    | 'd1'
-    | 'upstash'
-    | undefined) || 'localstorage';
+  (process.env.NEXT_PUBLIC_STORAGE_TYPE as 'localstorage' | 'd1' | undefined) ||
+  'd1';
 
 // 创建存储实例
 function createStorage(): IStorage {
   switch (STORAGE_TYPE) {
-    case 'redis':
-      return new RedisStorage();
-    case 'upstash':
-      return new UpstashRedisStorage();
     case 'd1':
       return new D1Storage();
     case 'localstorage':
     default:
-      // 默认返回内存实现，保证本地开发可用
       return null as unknown as IStorage;
   }
 }
