@@ -1,0 +1,46 @@
+2026-03-24T06:18:52.229815Z	Cloning repository...
+2026-03-24T06:18:53.371451Z	From https://github.com/shiratsukihiyori/MoonTV
+2026-03-24T06:18:53.371971Z	 * branch            8fe214601eea9b3eaf00aa7cdf30cf598874c217 -> FETCH_HEAD
+2026-03-24T06:18:53.372048Z	
+2026-03-24T06:18:53.461983Z	HEAD is now at 8fe2146 Add live streaming APIs, proxies, and utilities
+2026-03-24T06:18:53.462346Z	
+2026-03-24T06:18:53.503124Z	
+2026-03-24T06:18:53.503531Z	Using v2 root directory strategy
+2026-03-24T06:18:53.515354Z	Success: Finished cloning repository files
+2026-03-24T06:18:55.991637Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-03-24T06:18:55.992148Z	
+2026-03-24T06:18:57.084882Z	No Wrangler configuration file found. Continuing.
+2026-03-24T06:18:57.287848Z	Detected the following tools from environment: nodejs@20.10.0, pnpm@10.11.1
+2026-03-24T06:18:57.288229Z	Installing nodejs 20.10.0
+2026-03-24T06:18:58.085255Z	Trying to update node-build... ok
+2026-03-24T06:18:58.138592Z	To follow progress, use 'tail -f /tmp/node-build.20260324061858.800.log' or pass --verbose
+2026-03-24T06:18:58.184844Z	Downloading node-v20.10.0-linux-x64.tar.gz...
+2026-03-24T06:18:58.309592Z	-> https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz
+2026-03-24T06:19:00.642367Z	
+2026-03-24T06:19:00.642714Z	WARNING: node-v20.10.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-03-24T06:19:00.642791Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-03-24T06:19:00.643181Z	
+2026-03-24T06:19:00.643273Z	Installing node-v20.10.0-linux-x64...
+2026-03-24T06:19:01.159624Z	Installed node-v20.10.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.10.0
+2026-03-24T06:19:01.160217Z	
+2026-03-24T06:19:02.426556Z	
+2026-03-24T06:19:02.426975Z	changed 1 package in 433ms
+2026-03-24T06:19:02.443074Z	Reshimming asdf nodejs...
+2026-03-24T06:19:04.318107Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-03-24T06:19:04.723348Z	! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.12.4.tgz
+2026-03-24T06:19:06.481027Z	Installing project dependencies: pnpm install
+2026-03-24T06:19:07.321034Z	 ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with <ROOT>/package.json
+2026-03-24T06:19:07.321425Z	
+2026-03-24T06:19:07.321562Z	Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
+2026-03-24T06:19:07.321627Z	
+2026-03-24T06:19:07.321705Z	  Failure reason:
+2026-03-24T06:19:07.321747Z	  specifiers in the lockfile don't match specifiers in package.json:
+2026-03-24T06:19:07.321778Z	* 8 dependencies were added: @types/bs58@^5.0.0, @types/he@^1.2.3, webpack-obfuscator@^3.5.1, @tanstack/react-virtual@^3.13.19, @types/crypto-js@^4.2.2, bs58@^6.0.0, crypto-js@^4.2.0, he@^1.2.0
+2026-03-24T06:19:07.321805Z	
+2026-03-24T06:19:07.363836Z	Error: Exit with error code: 1
+2026-03-24T06:19:07.36407Z	    at ChildProcess.<anonymous> (/snapshot/dist/run-build.js)
+2026-03-24T06:19:07.364126Z	    at Object.onceWrapper (node:events:652:26)
+2026-03-24T06:19:07.364186Z	    at ChildProcess.emit (node:events:537:28)
+2026-03-24T06:19:07.36433Z	    at ChildProcess._handle.onexit (node:internal/child_process:291:12)
+2026-03-24T06:19:07.3705Z	Failed: build command exited with code: 1
+2026-03-24T06:19:08.993494Z	Failed: error occurred while running build command

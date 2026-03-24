@@ -1,0 +1,19 @@
+name = "moontv"
+compatibility_date = "2024-01-01"
+
+[vars]
+NEXT_PUBLIC_STORAGE_TYPE = "d1"
+SITE_NAME = "MoonTV"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "moontv-db"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[build]
+command = "pnpm install && pnpm gen:runtime && pnpm gen:manifest && pnpm build"
+watch_dir = "src"
+
+[dev]
+port = 8787
+local_protocol = "http"

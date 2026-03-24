@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const nextConfig = {
-  output: 'standalone',
+  output: process.env.CF_PAGES === '1' ? 'export' : 'standalone',
   eslint: {
     dirs: ['src'],
   },
@@ -66,7 +66,8 @@ const nextConfig = {
 
 const withPWA = require('next-pwa')({
   dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+  disable:
+    process.env.NODE_ENV === 'development' || process.env.CF_PAGES === '1',
   register: true,
   skipWaiting: true,
 });
