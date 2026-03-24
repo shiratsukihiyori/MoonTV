@@ -1,198 +1,198 @@
-2026-03-24T07:10:13.514659Z	Cloning repository...
-2026-03-24T07:10:14.721998Z	From https://github.com/shiratsukihiyori/MoonTV
-2026-03-24T07:10:14.722279Z	 * branch            8be8a1cb4ccc5fca5290ca63892c61486ff22f5d -> FETCH_HEAD
-2026-03-24T07:10:14.722357Z	
-2026-03-24T07:10:14.81485Z	HEAD is now at 8be8a1c fix: disable lint for Cloudflare Pages build
-2026-03-24T07:10:14.81512Z	
-2026-03-24T07:10:14.855925Z	
-2026-03-24T07:10:14.856268Z	Using v2 root directory strategy
-2026-03-24T07:10:14.869986Z	Success: Finished cloning repository files
-2026-03-24T07:10:17.007904Z	Checking for configuration in a Wrangler configuration file (BETA)
-2026-03-24T07:10:17.008286Z	
-2026-03-24T07:10:17.008663Z	Found wrangler.toml file. Reading build configuration...
-2026-03-24T07:10:18.096085Z	A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
-2026-03-24T07:10:18.341373Z	Detected the following tools from environment: nodejs@20.10.0, pnpm@10.11.1
-2026-03-24T07:10:18.343706Z	Installing nodejs 20.10.0
-2026-03-24T07:10:19.125964Z	Trying to update node-build... ok
-2026-03-24T07:10:19.179009Z	To follow progress, use 'tail -f /tmp/node-build.20260324071019.798.log' or pass --verbose
-2026-03-24T07:10:19.226823Z	Downloading node-v20.10.0-linux-x64.tar.gz...
-2026-03-24T07:10:19.348853Z	-> https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz
-2026-03-24T07:10:21.617035Z	
-2026-03-24T07:10:21.61727Z	WARNING: node-v20.10.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
-2026-03-24T07:10:21.61733Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
-2026-03-24T07:10:21.617371Z	
-2026-03-24T07:10:21.617407Z	Installing node-v20.10.0-linux-x64...
-2026-03-24T07:10:22.120528Z	Installed node-v20.10.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.10.0
-2026-03-24T07:10:22.120835Z	
-2026-03-24T07:10:23.252507Z	
-2026-03-24T07:10:23.252748Z	changed 1 package in 389ms
-2026-03-24T07:10:23.261738Z	Reshimming asdf nodejs...
-2026-03-24T07:10:25.244966Z	Preparing pnpm@10.11.1 for immediate activation...
-2026-03-24T07:10:25.643631Z	! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.12.4.tgz
-2026-03-24T07:10:27.319471Z	Installing project dependencies: pnpm install
-2026-03-24T07:10:27.856024Z	Lockfile is up to date, resolution step is skipped
-2026-03-24T07:10:27.984672Z	Progress: resolved 1, reused 0, downloaded 0, added 0
-2026-03-24T07:10:28.117605Z	Packages: +1356
-2026-03-24T07:10:28.117911Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-2026-03-24T07:10:28.979015Z	Progress: resolved 1356, reused 0, downloaded 66, added 0
-2026-03-24T07:10:29.979804Z	Progress: resolved 1356, reused 0, downloaded 289, added 245
-2026-03-24T07:10:30.984162Z	Progress: resolved 1356, reused 0, downloaded 365, added 314
-2026-03-24T07:10:31.982398Z	Progress: resolved 1356, reused 0, downloaded 583, added 578
-2026-03-24T07:10:33.033538Z	Progress: resolved 1356, reused 0, downloaded 842, added 839
-2026-03-24T07:10:34.031756Z	Progress: resolved 1356, reused 0, downloaded 936, added 914
-2026-03-24T07:10:35.032994Z	Progress: resolved 1356, reused 0, downloaded 1247, added 1241
-2026-03-24T07:10:36.033938Z	Progress: resolved 1356, reused 0, downloaded 1248, added 1243
-2026-03-24T07:10:37.432691Z	Progress: resolved 1356, reused 0, downloaded 1249, added 1243
-2026-03-24T07:10:38.4344Z	Progress: resolved 1356, reused 0, downloaded 1355, added 1355
-2026-03-24T07:10:39.434785Z	Progress: resolved 1356, reused 0, downloaded 1356, added 1355
-2026-03-24T07:10:39.511926Z	Progress: resolved 1356, reused 0, downloaded 1356, added 1356, done
-2026-03-24T07:10:40.244931Z	
-2026-03-24T07:10:40.245349Z	dependencies:
-2026-03-24T07:10:40.245462Z	+ @cloudflare/next-on-pages 1.13.12
-2026-03-24T07:10:40.245556Z	+ @dnd-kit/core 6.3.1
-2026-03-24T07:10:40.245604Z	+ @dnd-kit/modifiers 9.0.0
-2026-03-24T07:10:40.245651Z	+ @dnd-kit/sortable 10.0.0
-2026-03-24T07:10:40.245688Z	+ @dnd-kit/utilities 3.2.2
-2026-03-24T07:10:40.245724Z	+ @headlessui/react 2.2.4
-2026-03-24T07:10:40.245763Z	+ @heroicons/react 2.2.0
-2026-03-24T07:10:40.245799Z	+ @tanstack/react-virtual 3.13.23
-2026-03-24T07:10:40.245841Z	+ @types/crypto-js 4.2.2
-2026-03-24T07:10:40.245896Z	+ @upstash/redis 1.35.1
-2026-03-24T07:10:40.245941Z	+ @vidstack/react 1.12.13
-2026-03-24T07:10:40.245998Z	+ artplayer 5.2.3
-2026-03-24T07:10:40.246055Z	+ bs58 6.0.0
-2026-03-24T07:10:40.246099Z	+ clsx 2.1.1
-2026-03-24T07:10:40.246159Z	+ crypto-js 4.2.0
-2026-03-24T07:10:40.246215Z	+ framer-motion 12.18.1
-2026-03-24T07:10:40.246266Z	+ he 1.2.0
-2026-03-24T07:10:40.246308Z	+ hls.js 1.6.6
-2026-03-24T07:10:40.246351Z	+ lucide-react 0.438.0
-2026-03-24T07:10:40.246393Z	+ media-icons 1.1.5
-2026-03-24T07:10:40.246436Z	+ next 14.2.30
-2026-03-24T07:10:40.246476Z	+ next-pwa 5.6.0
-2026-03-24T07:10:40.246523Z	+ next-themes 0.4.6
-2026-03-24T07:10:40.246571Z	+ react 18.3.1
-2026-03-24T07:10:40.246607Z	+ react-dom 18.3.1
-2026-03-24T07:10:40.246653Z	+ react-icons 5.5.0
-2026-03-24T07:10:40.24669Z	+ redis 4.7.1
-2026-03-24T07:10:40.246725Z	+ sweetalert2 11.22.2
-2026-03-24T07:10:40.246767Z	+ swiper 11.2.8
-2026-03-24T07:10:40.246804Z	+ tailwind-merge 2.6.0
-2026-03-24T07:10:40.246846Z	+ vidstack 0.6.15
-2026-03-24T07:10:40.24689Z	+ zod 3.25.67
-2026-03-24T07:10:40.246933Z	
-2026-03-24T07:10:40.246975Z	devDependencies:
-2026-03-24T07:10:40.247013Z	+ @commitlint/cli 16.3.0
-2026-03-24T07:10:40.247053Z	+ @commitlint/config-conventional 16.2.4
-2026-03-24T07:10:40.247089Z	+ @svgr/webpack 8.1.0
-2026-03-24T07:10:40.247125Z	+ @tailwindcss/forms 0.5.10
-2026-03-24T07:10:40.247164Z	+ @testing-library/jest-dom 5.17.0
-2026-03-24T07:10:40.247212Z	+ @testing-library/react 15.0.7
-2026-03-24T07:10:40.247251Z	+ @types/bs58 5.0.0
-2026-03-24T07:10:40.247287Z	+ @types/he 1.2.3
-2026-03-24T07:10:40.247323Z	+ @types/node 24.0.3
-2026-03-24T07:10:40.247358Z	+ @types/react 18.3.23
-2026-03-24T07:10:40.247394Z	+ @types/react-dom 19.1.6
-2026-03-24T07:10:40.247429Z	+ @types/testing-library__jest-dom 5.14.9
-2026-03-24T07:10:40.247482Z	+ @typescript-eslint/eslint-plugin 5.62.0
-2026-03-24T07:10:40.247519Z	+ @typescript-eslint/parser 5.62.0
-2026-03-24T07:10:40.247554Z	+ autoprefixer 10.4.21
-2026-03-24T07:10:40.24759Z	+ eslint 8.57.1
-2026-03-24T07:10:40.247625Z	+ eslint-config-next 14.2.30
-2026-03-24T07:10:40.247709Z	+ eslint-config-prettier 8.10.0
-2026-03-24T07:10:40.247757Z	+ eslint-plugin-simple-import-sort 7.0.0
-2026-03-24T07:10:40.247794Z	+ eslint-plugin-unused-imports 2.0.0
-2026-03-24T07:10:40.247832Z	+ husky 7.0.4
-2026-03-24T07:10:40.247877Z	+ jest 27.5.1
-2026-03-24T07:10:40.247917Z	+ lint-staged 12.5.0
-2026-03-24T07:10:40.247963Z	+ next-router-mock 0.9.13
-2026-03-24T07:10:40.247999Z	+ postcss 8.5.6
-2026-03-24T07:10:40.248037Z	+ prettier 2.8.8
-2026-03-24T07:10:40.248082Z	+ prettier-plugin-tailwindcss 0.5.14
-2026-03-24T07:10:40.248122Z	+ tailwindcss 3.4.17
-2026-03-24T07:10:40.248158Z	+ typescript 4.9.5
-2026-03-24T07:10:40.248203Z	+ webpack-obfuscator 3.6.0
-2026-03-24T07:10:40.248242Z	
-2026-03-24T07:10:40.248329Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
-2026-03-24T07:10:40.248385Z	│                                                                              │
-2026-03-24T07:10:40.248433Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
-2026-03-24T07:10:40.248568Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
-2026-03-24T07:10:40.24862Z	│   to run scripts.                                                            │
-2026-03-24T07:10:40.248673Z	│                                                                              │
-2026-03-24T07:10:40.248718Z	╰──────────────────────────────────────────────────────────────────────────────╯
-2026-03-24T07:10:40.248777Z	
-2026-03-24T07:10:40.289101Z	
-2026-03-24T07:10:40.289995Z	> moontv@0.1.0 prepare /opt/buildhome/repo
-2026-03-24T07:10:40.290384Z	> husky install
-2026-03-24T07:10:40.290665Z	
-2026-03-24T07:10:40.372733Z	husky - Git hooks installed
-2026-03-24T07:10:40.430811Z	Done in 12.9s using pnpm v10.12.4
-2026-03-24T07:10:40.503254Z	Executing user command: pnpm install --frozen-lockfile && pnpm run pages:build
-2026-03-24T07:10:41.254731Z	Lockfile is up to date, resolution step is skipped
-2026-03-24T07:10:41.457852Z	Already up to date
-2026-03-24T07:10:41.841704Z	
-2026-03-24T07:10:41.842221Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
-2026-03-24T07:10:41.842462Z	│                                                                              │
-2026-03-24T07:10:41.842592Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
-2026-03-24T07:10:41.842729Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
-2026-03-24T07:10:41.842837Z	│   to run scripts.                                                            │
-2026-03-24T07:10:41.842892Z	│                                                                              │
-2026-03-24T07:10:41.842946Z	╰──────────────────────────────────────────────────────────────────────────────╯
-2026-03-24T07:10:41.843011Z	
-2026-03-24T07:10:41.86343Z	
-2026-03-24T07:10:41.863953Z	> moontv@0.1.0 prepare /opt/buildhome/repo
-2026-03-24T07:10:41.864067Z	> husky install
-2026-03-24T07:10:41.864169Z	
-2026-03-24T07:10:41.928326Z	husky - Git hooks installed
-2026-03-24T07:10:41.943693Z	Done in 1.2s using pnpm v10.12.4
-2026-03-24T07:10:42.554086Z	
-2026-03-24T07:10:42.555258Z	> moontv@0.1.0 pages:build /opt/buildhome/repo
-2026-03-24T07:10:42.555443Z	> pnpm gen:runtime && pnpm gen:manifest && next build --no-lint && npx @cloudflare/next-on-pages --experimental-minify
-2026-03-24T07:10:42.555577Z	
-2026-03-24T07:10:43.087702Z	
-2026-03-24T07:10:43.089568Z	> moontv@0.1.0 gen:runtime /opt/buildhome/repo
-2026-03-24T07:10:43.089659Z	> node scripts/convert-config.js
-2026-03-24T07:10:43.089713Z	
-2026-03-24T07:10:43.146733Z	已生成 src/lib/runtime.ts
-2026-03-24T07:10:43.539287Z	
-2026-03-24T07:10:43.539969Z	> moontv@0.1.0 gen:manifest /opt/buildhome/repo
-2026-03-24T07:10:43.54014Z	> node scripts/generate-manifest.js
-2026-03-24T07:10:43.540264Z	
-2026-03-24T07:10:43.57545Z	✅ Generated manifest.json with site name: 星星影视
-2026-03-24T07:10:44.037699Z	 ⚠ Linting is disabled.
-2026-03-24T07:10:44.579732Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
-2026-03-24T07:10:44.583644Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
-2026-03-24T07:10:44.58382Z	This information is used to shape Next.js' roadmap and prioritize features.
-2026-03-24T07:10:44.583906Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-2026-03-24T07:10:44.584155Z	https://nextjs.org/telemetry
-2026-03-24T07:10:44.584289Z	
-2026-03-24T07:10:44.622935Z	  ▲ Next.js 14.2.30
-2026-03-24T07:10:44.623426Z	
-2026-03-24T07:10:44.679552Z	   Creating an optimized production build ...
-2026-03-24T07:10:45.081285Z	> [PWA] PWA support is disabled
-2026-03-24T07:10:45.082028Z	> [PWA] PWA support is disabled
-2026-03-24T07:10:59.437596Z	Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
-2026-03-24T07:10:59.437933Z	  npx update-browserslist-db@latest
-2026-03-24T07:10:59.437999Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
-2026-03-24T07:11:01.748846Z	Browserslist: caniuse-lite is outdated. Please run:
-2026-03-24T07:11:01.749155Z	  npx update-browserslist-db@latest
-2026-03-24T07:11:01.749261Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
-2026-03-24T07:11:04.761522Z	 ✓ Compiled successfully
-2026-03-24T07:11:04.76296Z	   Checking validity of types ...
-2026-03-24T07:11:13.11989Z	Failed to compile.
-2026-03-24T07:11:13.120795Z	
-2026-03-24T07:11:13.120912Z	./src/app/api/live/channels/route.ts:14:31
-2026-03-24T07:11:13.120964Z	Type error: Property 'live' does not exist on type 'Promise<AdminConfig>'.
-2026-03-24T07:11:13.121038Z	
-2026-03-24T07:11:13.121078Z	[0m [90m 12 |[39m[0m
-2026-03-24T07:11:13.12111Z	[0m [90m 13 |[39m     [90m// 从配置中获取直播源[39m[0m
-2026-03-24T07:11:13.121156Z	[0m[31m[1m>[22m[39m[90m 14 |[39m     [36mconst[39m liveConfig [33m=[39m config[33m.[39mlive [33m||[39m {}[33m;[39m[0m
-2026-03-24T07:11:13.121194Z	[0m [90m    |[39m                               [31m[1m^[22m[39m[0m
-2026-03-24T07:11:13.121313Z	[0m [90m 15 |[39m     [36mconst[39m sources [33m=[39m liveConfig[33m.[39msources [33m||[39m [][33m;[39m[0m
-2026-03-24T07:11:13.12142Z	[0m [90m 16 |[39m[0m
-2026-03-24T07:11:13.121646Z	[0m [90m 17 |[39m     [36mlet[39m allChannels[33m:[39m [33mLiveChannel[39m[] [33m=[39m [][33m;[39m[0m
-2026-03-24T07:11:13.18198Z	Next.js build worker exited with code: 1 and signal: null
-2026-03-24T07:11:13.303753Z	 ELIFECYCLE  Command failed with exit code 1.
-2026-03-24T07:11:13.338614Z	Failed: Error while executing user command. Exited with error code: 1
-2026-03-24T07:11:13.3463Z	Failed: build command exited with code: 1
-2026-03-24T07:11:14.953659Z	Failed: error occurred while running build command
+2026-03-24T07:17:41.825227Z	Cloning repository...
+2026-03-24T07:17:43.290137Z	From https://github.com/shiratsukihiyori/MoonTV
+2026-03-24T07:17:43.290437Z	 * branch            65b36838a5021dd7dee6dfdcca0c0365df00c552 -> FETCH_HEAD
+2026-03-24T07:17:43.290495Z	
+2026-03-24T07:17:43.42211Z	HEAD is now at 65b3683 fix: skip type check in Cloudflare Pages build
+2026-03-24T07:17:43.42259Z	
+2026-03-24T07:17:43.480882Z	
+2026-03-24T07:17:43.481407Z	Using v2 root directory strategy
+2026-03-24T07:17:43.497354Z	Success: Finished cloning repository files
+2026-03-24T07:17:45.838665Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-03-24T07:17:45.839075Z	
+2026-03-24T07:17:45.839466Z	Found wrangler.toml file. Reading build configuration...
+2026-03-24T07:17:46.937639Z	A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-03-24T07:17:47.236145Z	Detected the following tools from environment: nodejs@20.10.0, pnpm@10.11.1
+2026-03-24T07:17:47.23662Z	Installing nodejs 20.10.0
+2026-03-24T07:17:48.181999Z	Trying to update node-build... ok
+2026-03-24T07:17:48.315821Z	To follow progress, use 'tail -f /tmp/node-build.20260324071748.797.log' or pass --verbose
+2026-03-24T07:17:48.364539Z	Downloading node-v20.10.0-linux-x64.tar.gz...
+2026-03-24T07:17:48.53601Z	-> https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz
+2026-03-24T07:17:50.798275Z	
+2026-03-24T07:17:50.798628Z	WARNING: node-v20.10.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-03-24T07:17:50.798743Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-03-24T07:17:50.798817Z	
+2026-03-24T07:17:50.798873Z	Installing node-v20.10.0-linux-x64...
+2026-03-24T07:17:51.432887Z	Installed node-v20.10.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.10.0
+2026-03-24T07:17:51.433176Z	
+2026-03-24T07:17:52.778532Z	
+2026-03-24T07:17:52.778818Z	changed 1 package in 471ms
+2026-03-24T07:17:52.789168Z	Reshimming asdf nodejs...
+2026-03-24T07:17:55.100781Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-03-24T07:17:55.543383Z	! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.12.4.tgz
+2026-03-24T07:17:57.659139Z	Installing project dependencies: pnpm install
+2026-03-24T07:17:58.321417Z	Lockfile is up to date, resolution step is skipped
+2026-03-24T07:17:58.481761Z	Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-03-24T07:17:58.668181Z	Packages: +1356
+2026-03-24T07:17:58.66933Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-03-24T07:17:59.497829Z	Progress: resolved 1356, reused 0, downloaded 34, added 0
+2026-03-24T07:18:00.497362Z	Progress: resolved 1356, reused 0, downloaded 157, added 33
+2026-03-24T07:18:01.541465Z	Progress: resolved 1356, reused 0, downloaded 309, added 169
+2026-03-24T07:18:02.542205Z	Progress: resolved 1356, reused 0, downloaded 352, added 186
+2026-03-24T07:18:03.547264Z	Progress: resolved 1356, reused 0, downloaded 431, added 237
+2026-03-24T07:18:04.588592Z	Progress: resolved 1356, reused 0, downloaded 610, added 411
+2026-03-24T07:18:05.591274Z	Progress: resolved 1356, reused 0, downloaded 739, added 467
+2026-03-24T07:18:06.589841Z	Progress: resolved 1356, reused 0, downloaded 937, added 604
+2026-03-24T07:18:07.590961Z	Progress: resolved 1356, reused 0, downloaded 1025, added 645
+2026-03-24T07:18:08.591532Z	Progress: resolved 1356, reused 0, downloaded 1259, added 900
+2026-03-24T07:18:09.593681Z	Progress: resolved 1356, reused 0, downloaded 1354, added 996
+2026-03-24T07:18:10.141636Z	Progress: resolved 1356, reused 0, downloaded 1356, added 1356, done
+2026-03-24T07:18:10.941824Z	
+2026-03-24T07:18:10.942256Z	dependencies:
+2026-03-24T07:18:10.942409Z	+ @cloudflare/next-on-pages 1.13.12
+2026-03-24T07:18:10.942477Z	+ @dnd-kit/core 6.3.1
+2026-03-24T07:18:10.942526Z	+ @dnd-kit/modifiers 9.0.0
+2026-03-24T07:18:10.942604Z	+ @dnd-kit/sortable 10.0.0
+2026-03-24T07:18:10.942673Z	+ @dnd-kit/utilities 3.2.2
+2026-03-24T07:18:10.942724Z	+ @headlessui/react 2.2.4
+2026-03-24T07:18:10.942769Z	+ @heroicons/react 2.2.0
+2026-03-24T07:18:10.942814Z	+ @tanstack/react-virtual 3.13.23
+2026-03-24T07:18:10.942859Z	+ @types/crypto-js 4.2.2
+2026-03-24T07:18:10.942939Z	+ @upstash/redis 1.35.1
+2026-03-24T07:18:10.942993Z	+ @vidstack/react 1.12.13
+2026-03-24T07:18:10.943044Z	+ artplayer 5.2.3
+2026-03-24T07:18:10.943097Z	+ bs58 6.0.0
+2026-03-24T07:18:10.943175Z	+ clsx 2.1.1
+2026-03-24T07:18:10.943227Z	+ crypto-js 4.2.0
+2026-03-24T07:18:10.943273Z	+ framer-motion 12.18.1
+2026-03-24T07:18:10.943312Z	+ he 1.2.0
+2026-03-24T07:18:10.943358Z	+ hls.js 1.6.6
+2026-03-24T07:18:10.943405Z	+ lucide-react 0.438.0
+2026-03-24T07:18:10.943454Z	+ media-icons 1.1.5
+2026-03-24T07:18:10.943502Z	+ next 14.2.30
+2026-03-24T07:18:10.94355Z	+ next-pwa 5.6.0
+2026-03-24T07:18:10.943649Z	+ next-themes 0.4.6
+2026-03-24T07:18:10.943748Z	+ react 18.3.1
+2026-03-24T07:18:10.943869Z	+ react-dom 18.3.1
+2026-03-24T07:18:10.944001Z	+ react-icons 5.5.0
+2026-03-24T07:18:10.944056Z	+ redis 4.7.1
+2026-03-24T07:18:10.9441Z	+ sweetalert2 11.22.2
+2026-03-24T07:18:10.94415Z	+ swiper 11.2.8
+2026-03-24T07:18:10.944213Z	+ tailwind-merge 2.6.0
+2026-03-24T07:18:10.944313Z	+ vidstack 0.6.15
+2026-03-24T07:18:10.945348Z	+ zod 3.25.67
+2026-03-24T07:18:10.945444Z	
+2026-03-24T07:18:10.945502Z	devDependencies:
+2026-03-24T07:18:10.945619Z	+ @commitlint/cli 16.3.0
+2026-03-24T07:18:10.945669Z	+ @commitlint/config-conventional 16.2.4
+2026-03-24T07:18:10.945701Z	+ @svgr/webpack 8.1.0
+2026-03-24T07:18:10.945734Z	+ @tailwindcss/forms 0.5.10
+2026-03-24T07:18:10.945772Z	+ @testing-library/jest-dom 5.17.0
+2026-03-24T07:18:10.94583Z	+ @testing-library/react 15.0.7
+2026-03-24T07:18:10.945889Z	+ @types/bs58 5.0.0
+2026-03-24T07:18:10.945944Z	+ @types/he 1.2.3
+2026-03-24T07:18:10.946009Z	+ @types/node 24.0.3
+2026-03-24T07:18:10.946095Z	+ @types/react 18.3.23
+2026-03-24T07:18:10.946203Z	+ @types/react-dom 19.1.6
+2026-03-24T07:18:10.946271Z	+ @types/testing-library__jest-dom 5.14.9
+2026-03-24T07:18:10.946391Z	+ @typescript-eslint/eslint-plugin 5.62.0
+2026-03-24T07:18:10.946461Z	+ @typescript-eslint/parser 5.62.0
+2026-03-24T07:18:10.946508Z	+ autoprefixer 10.4.21
+2026-03-24T07:18:10.946599Z	+ eslint 8.57.1
+2026-03-24T07:18:10.946658Z	+ eslint-config-next 14.2.30
+2026-03-24T07:18:10.946737Z	+ eslint-config-prettier 8.10.0
+2026-03-24T07:18:10.946801Z	+ eslint-plugin-simple-import-sort 7.0.0
+2026-03-24T07:18:10.946847Z	+ eslint-plugin-unused-imports 2.0.0
+2026-03-24T07:18:10.946888Z	+ husky 7.0.4
+2026-03-24T07:18:10.946933Z	+ jest 27.5.1
+2026-03-24T07:18:10.946976Z	+ lint-staged 12.5.0
+2026-03-24T07:18:10.947026Z	+ next-router-mock 0.9.13
+2026-03-24T07:18:10.947069Z	+ postcss 8.5.6
+2026-03-24T07:18:10.947108Z	+ prettier 2.8.8
+2026-03-24T07:18:10.947186Z	+ prettier-plugin-tailwindcss 0.5.14
+2026-03-24T07:18:10.947263Z	+ tailwindcss 3.4.17
+2026-03-24T07:18:10.947312Z	+ typescript 4.9.5
+2026-03-24T07:18:10.947362Z	+ webpack-obfuscator 3.6.0
+2026-03-24T07:18:10.947401Z	
+2026-03-24T07:18:10.947525Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-03-24T07:18:10.947637Z	│                                                                              │
+2026-03-24T07:18:10.947709Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
+2026-03-24T07:18:10.947771Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-03-24T07:18:10.947827Z	│   to run scripts.                                                            │
+2026-03-24T07:18:10.94795Z	│                                                                              │
+2026-03-24T07:18:10.948038Z	╰──────────────────────────────────────────────────────────────────────────────╯
+2026-03-24T07:18:10.948103Z	
+2026-03-24T07:18:10.970191Z	
+2026-03-24T07:18:10.970521Z	> moontv@0.1.0 prepare /opt/buildhome/repo
+2026-03-24T07:18:10.970625Z	> husky install
+2026-03-24T07:18:10.970697Z	
+2026-03-24T07:18:11.068232Z	husky - Git hooks installed
+2026-03-24T07:18:11.13528Z	Done in 13.2s using pnpm v10.12.4
+2026-03-24T07:18:11.624043Z	Executing user command: pnpm install --frozen-lockfile && pnpm run pages:build
+2026-03-24T07:18:12.320329Z	Lockfile is up to date, resolution step is skipped
+2026-03-24T07:18:12.528844Z	Already up to date
+2026-03-24T07:18:12.932241Z	
+2026-03-24T07:18:12.932834Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-03-24T07:18:12.933598Z	│                                                                              │
+2026-03-24T07:18:12.933701Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
+2026-03-24T07:18:12.933769Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-03-24T07:18:12.933819Z	│   to run scripts.                                                            │
+2026-03-24T07:18:12.933857Z	│                                                                              │
+2026-03-24T07:18:12.933895Z	╰──────────────────────────────────────────────────────────────────────────────╯
+2026-03-24T07:18:12.933958Z	
+2026-03-24T07:18:12.952132Z	
+2026-03-24T07:18:12.952508Z	> moontv@0.1.0 prepare /opt/buildhome/repo
+2026-03-24T07:18:12.952593Z	> husky install
+2026-03-24T07:18:12.952649Z	
+2026-03-24T07:18:13.01244Z	husky - Git hooks installed
+2026-03-24T07:18:13.033809Z	Done in 1.1s using pnpm v10.12.4
+2026-03-24T07:18:13.610888Z	
+2026-03-24T07:18:13.611237Z	> moontv@0.1.0 pages:build /opt/buildhome/repo
+2026-03-24T07:18:13.611317Z	> pnpm gen:runtime && pnpm gen:manifest && TSC_COMPILE_ON_BUILD=false next build --no-lint && npx @cloudflare/next-on-pages --experimental-minify
+2026-03-24T07:18:13.611355Z	
+2026-03-24T07:18:14.041505Z	
+2026-03-24T07:18:14.042199Z	> moontv@0.1.0 gen:runtime /opt/buildhome/repo
+2026-03-24T07:18:14.042297Z	> node scripts/convert-config.js
+2026-03-24T07:18:14.042363Z	
+2026-03-24T07:18:14.08444Z	已生成 src/lib/runtime.ts
+2026-03-24T07:18:14.539501Z	
+2026-03-24T07:18:14.540125Z	> moontv@0.1.0 gen:manifest /opt/buildhome/repo
+2026-03-24T07:18:14.540228Z	> node scripts/generate-manifest.js
+2026-03-24T07:18:14.540285Z	
+2026-03-24T07:18:14.582816Z	✅ Generated manifest.json with site name: 星星影视
+2026-03-24T07:18:15.188833Z	 ⚠ Linting is disabled.
+2026-03-24T07:18:15.819106Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-03-24T07:18:15.823794Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-03-24T07:18:15.824046Z	This information is used to shape Next.js' roadmap and prioritize features.
+2026-03-24T07:18:15.82415Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-03-24T07:18:15.82426Z	https://nextjs.org/telemetry
+2026-03-24T07:18:15.824325Z	
+2026-03-24T07:18:15.869821Z	  ▲ Next.js 14.2.30
+2026-03-24T07:18:15.870235Z	
+2026-03-24T07:18:15.960838Z	   Creating an optimized production build ...
+2026-03-24T07:18:16.542042Z	> [PWA] PWA support is disabled
+2026-03-24T07:18:16.542917Z	> [PWA] PWA support is disabled
+2026-03-24T07:18:34.960273Z	Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+2026-03-24T07:18:34.960692Z	  npx update-browserslist-db@latest
+2026-03-24T07:18:34.960785Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2026-03-24T07:18:37.878308Z	Browserslist: caniuse-lite is outdated. Please run:
+2026-03-24T07:18:37.878747Z	  npx update-browserslist-db@latest
+2026-03-24T07:18:37.878838Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2026-03-24T07:18:41.620268Z	 ✓ Compiled successfully
+2026-03-24T07:18:41.62137Z	   Checking validity of types ...
+2026-03-24T07:18:52.721706Z	Failed to compile.
+2026-03-24T07:18:52.722098Z	
+2026-03-24T07:18:52.72223Z	./src/app/api/live/channels/route.ts:14:31
+2026-03-24T07:18:52.72233Z	Type error: Property 'LiveConfig' does not exist on type 'Promise<AdminConfig>'.
+2026-03-24T07:18:52.722429Z	
+2026-03-24T07:18:52.722481Z	[0m [90m 12 |[39m[0m
+2026-03-24T07:18:52.722559Z	[0m [90m 13 |[39m     [90m// 从配置中获取直播源[39m[0m
+2026-03-24T07:18:52.722624Z	[0m[31m[1m>[22m[39m[90m 14 |[39m     [36mconst[39m liveConfig [33m=[39m config[33m.[39m[33mLiveConfig[39m [33m||[39m { sources[33m:[39m [] }[33m;[39m[0m
+2026-03-24T07:18:52.72268Z	[0m [90m    |[39m                               [31m[1m^[22m[39m[0m
+2026-03-24T07:18:52.722764Z	[0m [90m 15 |[39m     [36mconst[39m sources [33m=[39m liveConfig[33m.[39msources [33m||[39m [][33m;[39m[0m
+2026-03-24T07:18:52.722965Z	[0m [90m 16 |[39m[0m
+2026-03-24T07:18:52.72322Z	[0m [90m 17 |[39m     [36mlet[39m allChannels[33m:[39m [33mLiveChannel[39m[] [33m=[39m [][33m;[39m[0m
+2026-03-24T07:18:52.796696Z	Next.js build worker exited with code: 1 and signal: null
+2026-03-24T07:18:52.957864Z	 ELIFECYCLE  Command failed with exit code 1.
+2026-03-24T07:18:53.024503Z	Failed: Error while executing user command. Exited with error code: 1
+2026-03-24T07:18:53.036673Z	Failed: build command exited with code: 1
+2026-03-24T07:18:54.515466Z	Failed: error occurred while running build command
