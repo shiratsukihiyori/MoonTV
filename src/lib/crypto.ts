@@ -6,8 +6,8 @@ let bs58: any = null;
 
 async function getBs58() {
   if (!bs58) {
-    const module = await import('bs58');
-    bs58 = module.default || module;
+    const bs58Module = await import('bs58');
+    bs58 = bs58Module.default || bs58Module;
   }
   return bs58;
 }

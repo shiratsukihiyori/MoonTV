@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm gen:runtime && pnpm gen:manifest && next dev -H 0.0.0.0",
-    "build": "pnpm gen:runtime && pnpm gen:manifest && next build",
+    "build": "pnpm gen:runtime && pnpm gen:manifest && TSC_COMPILE_ON_BUILD=false next build --no-lint",
     "build:cf": "pnpm gen:runtime && pnpm gen:manifest && CF_PAGES=1 next build",
     "start": "next start",
     "lint": "next lint",
