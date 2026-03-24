@@ -4,18 +4,22 @@ import { getConfig } from '@/lib/config';
 export async function GET() {
   try {
     const config = getConfig();
-    const liveConfig = config.live || {};
+    const liveConfig = config.LiveConfig || { sources: [] };
     const sources = liveConfig.sources || [];
 
     return NextResponse.json({
       success: true,
-      data: sources.map(source => ({
+      data: sources.map((source) => ({
         id: source.id,
         name: source.name,
         type: source.type,
         enabled: source.enabled,
         lastUpdate: source.lastUpdate,
-        channelCount: source.groups?.reduce((total, group) => total + group.channels.length, 0) || 0,
+        channelCount:
+          source.groups?.reduce(
+            (total, group) => total + group.channels.length,
+            0
+          ) || 0,
       })),
     });
   } catch (error) {

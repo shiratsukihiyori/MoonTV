@@ -1,3 +1,12 @@
+export interface LiveSource {
+  id: string;
+  name: string;
+  type: 'm3u' | 'xml';
+  url: string;
+  enabled: boolean;
+  lastUpdate?: number;
+}
+
 export interface AdminConfig {
   SiteConfig: {
     SiteName: string;
@@ -31,6 +40,9 @@ export interface AdminConfig {
     from: 'config' | 'custom';
     disabled?: boolean;
   }[];
+  LiveConfig?: {
+    sources: LiveSource[];
+  };
 }
 
 export interface AdminConfigResult {

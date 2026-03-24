@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search');
 
     // 从配置中获取直播源
-    const liveConfig = config.live || {};
+    const liveConfig = config.LiveConfig || { sources: [] };
     const sources = liveConfig.sources || [];
 
     let allChannels: LiveChannel[] = [];
@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
         }
 
         // 添加源信息
-        channels = channels.map(channel => ({
+        channels = channels.map((channel) => ({
           ...channel,
           source: source.name,
         }));
@@ -51,19 +51,21 @@ export async function GET(request: NextRequest) {
 
     // 过滤分组
     if (group) {
-      groups = groups.filter(g => g.name === group);
+      groups = groups.filter((g) => g.name === group);
     }
 
     // 搜索过滤
     if (search) {
-      groups = groups.map(g => ({
-        ...g,
-        channels: LiveUtils.filterChannels(g.channels, search),
-      })).filter(g => g.channels.length > 0);
+      groups = groups
+        .map((g) => ({
+          ...g,
+          channels: LiveUtils.filterChannels(g.channels, search),
+        }))
+        .filter((g) => g.channels.length > 0);
     }
 
     // 排序频道
-    groups = groups.map(g => ({
+    groups = groups.map((g) => ({
       ...g,
       channels: LiveUtils.sortChannels(g.channels),
     }));
