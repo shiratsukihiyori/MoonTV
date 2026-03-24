@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -31,7 +33,10 @@ export async function GET(request: NextRequest) {
 
     if (!response.ok) {
       return NextResponse.json(
-        { success: false, error: `Failed to fetch segment: ${response.status}` },
+        {
+          success: false,
+          error: `Failed to fetch segment: ${response.status}`,
+        },
         { status: response.status }
       );
     }

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -37,7 +39,8 @@ export async function GET(request: NextRequest) {
     }
 
     const content = await response.text();
-    const contentType = response.headers.get('content-type') || 'application/octet-stream';
+    const contentType =
+      response.headers.get('content-type') || 'application/octet-stream';
 
     return new NextResponse(content, {
       headers: {

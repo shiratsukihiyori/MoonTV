@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const runtime = 'edge';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -23,7 +25,10 @@ export async function GET(request: NextRequest) {
     }
 
     // 检查是否为 M3U8 文件
-    if (!url.toLowerCase().endsWith('.m3u8') && !url.toLowerCase().includes('.m3u8')) {
+    if (
+      !url.toLowerCase().endsWith('.m3u8') &&
+      !url.toLowerCase().includes('.m3u8')
+    ) {
       return NextResponse.json(
         { success: false, error: 'URL must point to an M3U8 file' },
         { status: 400 }
@@ -45,7 +50,8 @@ export async function GET(request: NextRequest) {
     }
 
     const content = await response.text();
-    const contentType = response.headers.get('content-type') || 'application/vnd.apple.mpegurl';
+    const contentType =
+      response.headers.get('content-type') || 'application/vnd.apple.mpegurl';
 
     // 处理 M3U8 内容，替换相对 URL 为绝对 URL
     const processedContent = processM3U8Content(content, url);
