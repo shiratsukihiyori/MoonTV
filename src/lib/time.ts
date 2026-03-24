@@ -30,7 +30,9 @@ export function parseCustomTimeFormat(timeStr: string): Date {
   }
 
   // 尝试解析 YYYYMMDDHHMMSS 格式
-  const yyyymmddhhmmssMatch = timeStr.match(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/);
+  const yyyymmddhhmmssMatch = timeStr.match(
+    /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/
+  );
   if (yyyymmddhhmmssMatch) {
     const [, year, month, day, hour, minute, second] = yyyymmddhhmmssMatch;
     return new Date(
@@ -44,7 +46,9 @@ export function parseCustomTimeFormat(timeStr: string): Date {
   }
 
   // 尝试解析 YYYY-MM-DD HH:MM:SS 格式
-  const isoMatch = timeStr.match(/^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})$/);
+  const isoMatch = timeStr.match(
+    /^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})$/
+  );
   if (isoMatch) {
     const [, year, month, day, hour, minute, second] = isoMatch;
     return new Date(
@@ -72,7 +76,10 @@ export function parseCustomTimeFormat(timeStr: string): Date {
 /**
  * 格式化时间为自定义格式
  */
-export function formatCustomTime(date: Date, format: string = 'YYYY-MM-DD HH:mm:ss'): string {
+export function formatCustomTime(
+  date: Date,
+  format = 'YYYY-MM-DD HH:mm:ss'
+): string {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
@@ -177,7 +184,15 @@ export function isThisWeek(date: Date): boolean {
  * 获取星期的中文名称
  */
 export function getWeekdayName(date: Date): string {
-  const weekdays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+  const weekdays = [
+    '星期日',
+    '星期一',
+    '星期二',
+    '星期三',
+    '星期四',
+    '星期五',
+    '星期六',
+  ];
   return weekdays[date.getDay()];
 }
 
@@ -186,8 +201,18 @@ export function getWeekdayName(date: Date): string {
  */
 export function getMonthName(date: Date): string {
   const months = [
-    '一月', '二月', '三月', '四月', '五月', '六月',
-    '七月', '八月', '九月', '十月', '十一月', '十二月'
+    '一月',
+    '二月',
+    '三月',
+    '四月',
+    '五月',
+    '六月',
+    '七月',
+    '八月',
+    '九月',
+    '十月',
+    '十一月',
+    '十二月',
   ];
   return months[date.getMonth()];
 }
@@ -221,7 +246,10 @@ export function addHours(date: Date, hours: number): Date {
 /**
  * 获取当前季度的开始和结束日期
  */
-export function getQuarterRange(date: Date = new Date()): { start: Date; end: Date } {
+export function getQuarterRange(date: Date = new Date()): {
+  start: Date;
+  end: Date;
+} {
   const year = date.getFullYear();
   const quarter = Math.floor(date.getMonth() / 3);
 
@@ -240,10 +268,14 @@ export function formatDuration(seconds: number): string {
   const remainingSeconds = seconds % 60;
 
   if (hours > 0) {
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    return `${hours.toString().padStart(2, '0')}:${minutes
+      .toString()
+      .padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
   }
 
-  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds
+    .toString()
+    .padStart(2, '0')}`;
 }
 
 /**

@@ -31,7 +31,7 @@ export class CryptoUtils {
   /**
    * 生成随机密钥
    */
-  static generateKey(length: number = 32): string {
+  static generateKey(length = 32): string {
     return CryptoJS.lib.WordArray.random(length).toString();
   }
 
@@ -75,7 +75,7 @@ export class CryptoUtils {
     const bytes = CryptoJS.enc.Utf8.parse(text);
     const uint8Array = new Uint8Array(bytes.sigBytes);
     for (let i = 0; i < bytes.sigBytes; i++) {
-      uint8Array[i] = bytes.words[i >>> 2] >>> (24 - (i % 4) * 8) & 0xff;
+      uint8Array[i] = (bytes.words[i >>> 2] >>> (24 - (i % 4) * 8)) & 0xff;
     }
     return bs58.encode(uint8Array);
   }
@@ -86,7 +86,9 @@ export class CryptoUtils {
   static base58Decode(encodedText: string): string {
     try {
       const decoded = bs58.decode(encodedText);
-      return CryptoJS.enc.Utf8.stringify(CryptoJS.lib.WordArray.create(decoded));
+      return CryptoJS.enc.Utf8.stringify(
+        CryptoJS.lib.WordArray.create(decoded)
+      );
     } catch (error) {
       console.error('Base58 decode failed:', error);
       return '';
@@ -96,14 +98,14 @@ export class CryptoUtils {
   /**
    * 生成随机盐
    */
-  static generateSalt(length: number = 16): string {
+  static generateSalt(length = 16): string {
     return CryptoJS.lib.WordArray.random(length).toString();
   }
 
   /**
    * PBKDF2 密钥派生
    */
-  static pbkdf2(password: string, salt: string, iterations: number = 10000): string {
+  static pbkdf2(password: string, salt: string, iterations = 10000): string {
     return CryptoJS.PBKDF2(password, salt, {
       keySize: 256 / 32,
       iterations: iterations,
@@ -120,10 +122,16 @@ export class CryptoUtils {
   /**
    * 验证 HMAC
    */
-  static verifyHmac(message: string, key: string, expectedHmac: string): boolean {
+  static verifyHmac(
+    message: string,
+    key: string,
+    expectedHmac: string
+  ): boolean {
     const computedHmac = this.hmacSha256(message, key);
-    return CryptoJS.enc.Hex.stringify(CryptoJS.enc.Hex.parse(computedHmac)) ===
-           CryptoJS.enc.Hex.stringify(CryptoJS.enc.Hex.parse(expectedHmac));
+    return (
+      CryptoJS.enc.Hex.stringify(CryptoJS.enc.Hex.parse(computedHmac)) ===
+      CryptoJS.enc.Hex.stringify(CryptoJS.enc.Hex.parse(expectedHmac))
+    );
   }
 
   /**

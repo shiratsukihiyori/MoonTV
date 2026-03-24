@@ -1,46 +1,316 @@
-2026-03-24T06:18:52.229815Z	Cloning repository...
-2026-03-24T06:18:53.371451Z	From https://github.com/shiratsukihiyori/MoonTV
-2026-03-24T06:18:53.371971Z	 * branch            8fe214601eea9b3eaf00aa7cdf30cf598874c217 -> FETCH_HEAD
-2026-03-24T06:18:53.372048Z	
-2026-03-24T06:18:53.461983Z	HEAD is now at 8fe2146 Add live streaming APIs, proxies, and utilities
-2026-03-24T06:18:53.462346Z	
-2026-03-24T06:18:53.503124Z	
-2026-03-24T06:18:53.503531Z	Using v2 root directory strategy
-2026-03-24T06:18:53.515354Z	Success: Finished cloning repository files
-2026-03-24T06:18:55.991637Z	Checking for configuration in a Wrangler configuration file (BETA)
-2026-03-24T06:18:55.992148Z	
-2026-03-24T06:18:57.084882Z	No Wrangler configuration file found. Continuing.
-2026-03-24T06:18:57.287848Z	Detected the following tools from environment: nodejs@20.10.0, pnpm@10.11.1
-2026-03-24T06:18:57.288229Z	Installing nodejs 20.10.0
-2026-03-24T06:18:58.085255Z	Trying to update node-build... ok
-2026-03-24T06:18:58.138592Z	To follow progress, use 'tail -f /tmp/node-build.20260324061858.800.log' or pass --verbose
-2026-03-24T06:18:58.184844Z	Downloading node-v20.10.0-linux-x64.tar.gz...
-2026-03-24T06:18:58.309592Z	-> https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz
-2026-03-24T06:19:00.642367Z	
-2026-03-24T06:19:00.642714Z	WARNING: node-v20.10.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
-2026-03-24T06:19:00.642791Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
-2026-03-24T06:19:00.643181Z	
-2026-03-24T06:19:00.643273Z	Installing node-v20.10.0-linux-x64...
-2026-03-24T06:19:01.159624Z	Installed node-v20.10.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.10.0
-2026-03-24T06:19:01.160217Z	
-2026-03-24T06:19:02.426556Z	
-2026-03-24T06:19:02.426975Z	changed 1 package in 433ms
-2026-03-24T06:19:02.443074Z	Reshimming asdf nodejs...
-2026-03-24T06:19:04.318107Z	Preparing pnpm@10.11.1 for immediate activation...
-2026-03-24T06:19:04.723348Z	! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.12.4.tgz
-2026-03-24T06:19:06.481027Z	Installing project dependencies: pnpm install
-2026-03-24T06:19:07.321034Z	 ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with <ROOT>/package.json
-2026-03-24T06:19:07.321425Z	
-2026-03-24T06:19:07.321562Z	Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
-2026-03-24T06:19:07.321627Z	
-2026-03-24T06:19:07.321705Z	  Failure reason:
-2026-03-24T06:19:07.321747Z	  specifiers in the lockfile don't match specifiers in package.json:
-2026-03-24T06:19:07.321778Z	* 8 dependencies were added: @types/bs58@^5.0.0, @types/he@^1.2.3, webpack-obfuscator@^3.5.1, @tanstack/react-virtual@^3.13.19, @types/crypto-js@^4.2.2, bs58@^6.0.0, crypto-js@^4.2.0, he@^1.2.0
-2026-03-24T06:19:07.321805Z	
-2026-03-24T06:19:07.363836Z	Error: Exit with error code: 1
-2026-03-24T06:19:07.36407Z	    at ChildProcess.<anonymous> (/snapshot/dist/run-build.js)
-2026-03-24T06:19:07.364126Z	    at Object.onceWrapper (node:events:652:26)
-2026-03-24T06:19:07.364186Z	    at ChildProcess.emit (node:events:537:28)
-2026-03-24T06:19:07.36433Z	    at ChildProcess._handle.onexit (node:internal/child_process:291:12)
-2026-03-24T06:19:07.3705Z	Failed: build command exited with code: 1
-2026-03-24T06:19:08.993494Z	Failed: error occurred while running build command
+2026-03-24T06:43:54.703476Z	Cloning repository...
+2026-03-24T06:43:55.551484Z	From https://github.com/shiratsukihiyori/MoonTV
+2026-03-24T06:43:55.551954Z	 * branch            111f7074f2c17fed0a8cb74a7a3a3444e7e7def5 -> FETCH_HEAD
+2026-03-24T06:43:55.552029Z	
+2026-03-24T06:43:55.654833Z	HEAD is now at 111f707 feat: add Cloudflare Pages D1 support and wrangler config
+2026-03-24T06:43:55.655184Z	
+2026-03-24T06:43:55.694871Z	
+2026-03-24T06:43:55.69526Z	Using v2 root directory strategy
+2026-03-24T06:43:55.706983Z	Success: Finished cloning repository files
+2026-03-24T06:43:57.37269Z	Checking for configuration in a Wrangler configuration file (BETA)
+2026-03-24T06:43:57.3732Z	
+2026-03-24T06:43:57.373649Z	Found wrangler.toml file. Reading build configuration...
+2026-03-24T06:43:58.460725Z	A Wrangler configuration file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2026-03-24T06:43:58.676129Z	Detected the following tools from environment: nodejs@20.10.0, pnpm@10.11.1
+2026-03-24T06:43:58.67657Z	Installing nodejs 20.10.0
+2026-03-24T06:43:59.448102Z	Trying to update node-build... ok
+2026-03-24T06:43:59.498498Z	To follow progress, use 'tail -f /tmp/node-build.20260324064359.798.log' or pass --verbose
+2026-03-24T06:43:59.542594Z	Downloading node-v20.10.0-linux-x64.tar.gz...
+2026-03-24T06:43:59.628456Z	-> https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-x64.tar.gz
+2026-03-24T06:44:01.743094Z	
+2026-03-24T06:44:01.743315Z	WARNING: node-v20.10.0-linux-x64 is in LTS Maintenance mode and nearing its end of life.
+2026-03-24T06:44:01.743382Z	It only receives *critical* security updates, *critical* bug fixes and documentation updates.
+2026-03-24T06:44:01.743422Z	
+2026-03-24T06:44:01.743458Z	Installing node-v20.10.0-linux-x64...
+2026-03-24T06:44:02.226649Z	Installed node-v20.10.0-linux-x64 to /opt/buildhome/.asdf/installs/nodejs/20.10.0
+2026-03-24T06:44:02.227177Z	
+2026-03-24T06:44:03.339905Z	
+2026-03-24T06:44:03.340138Z	changed 1 package in 379ms
+2026-03-24T06:44:03.34845Z	Reshimming asdf nodejs...
+2026-03-24T06:44:05.096676Z	Preparing pnpm@10.11.1 for immediate activation...
+2026-03-24T06:44:05.456877Z	! Corepack is about to download https://registry.npmjs.org/pnpm/-/pnpm-10.12.4.tgz
+2026-03-24T06:44:07.250614Z	Installing project dependencies: pnpm install
+2026-03-24T06:44:07.800788Z	Lockfile is up to date, resolution step is skipped
+2026-03-24T06:44:07.90325Z	Progress: resolved 1, reused 0, downloaded 0, added 0
+2026-03-24T06:44:08.041387Z	Packages: +1356
+2026-03-24T06:44:08.041666Z	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-03-24T06:44:08.906818Z	Progress: resolved 1356, reused 0, downloaded 44, added 0
+2026-03-24T06:44:09.904514Z	Progress: resolved 1356, reused 0, downloaded 121, added 0
+2026-03-24T06:44:10.904014Z	Progress: resolved 1356, reused 0, downloaded 209, added 25
+2026-03-24T06:44:11.905945Z	Progress: resolved 1356, reused 0, downloaded 298, added 67
+2026-03-24T06:44:12.907165Z	Progress: resolved 1356, reused 0, downloaded 344, added 140
+2026-03-24T06:44:13.907254Z	Progress: resolved 1356, reused 0, downloaded 610, added 426
+2026-03-24T06:44:14.907853Z	Progress: resolved 1356, reused 0, downloaded 857, added 855
+2026-03-24T06:44:15.910441Z	Progress: resolved 1356, reused 0, downloaded 950, added 941
+2026-03-24T06:44:16.912186Z	Progress: resolved 1356, reused 0, downloaded 1130, added 1120
+2026-03-24T06:44:17.868439Z	Progress: resolved 1356, reused 0, downloaded 1356, added 1356, done
+2026-03-24T06:44:18.356762Z	
+2026-03-24T06:44:18.357038Z	dependencies:
+2026-03-24T06:44:18.357114Z	+ @cloudflare/next-on-pages 1.13.12
+2026-03-24T06:44:18.357152Z	+ @dnd-kit/core 6.3.1
+2026-03-24T06:44:18.357183Z	+ @dnd-kit/modifiers 9.0.0
+2026-03-24T06:44:18.357211Z	+ @dnd-kit/sortable 10.0.0
+2026-03-24T06:44:18.357242Z	+ @dnd-kit/utilities 3.2.2
+2026-03-24T06:44:18.357269Z	+ @headlessui/react 2.2.4
+2026-03-24T06:44:18.357298Z	+ @heroicons/react 2.2.0
+2026-03-24T06:44:18.357328Z	+ @tanstack/react-virtual 3.13.23
+2026-03-24T06:44:18.357356Z	+ @types/crypto-js 4.2.2
+2026-03-24T06:44:18.357383Z	+ @upstash/redis 1.35.1
+2026-03-24T06:44:18.357411Z	+ @vidstack/react 1.12.13
+2026-03-24T06:44:18.357447Z	+ artplayer 5.2.3
+2026-03-24T06:44:18.357477Z	+ bs58 6.0.0
+2026-03-24T06:44:18.357505Z	+ clsx 2.1.1
+2026-03-24T06:44:18.357533Z	+ crypto-js 4.2.0
+2026-03-24T06:44:18.35756Z	+ framer-motion 12.18.1
+2026-03-24T06:44:18.357588Z	+ he 1.2.0
+2026-03-24T06:44:18.357615Z	+ hls.js 1.6.6
+2026-03-24T06:44:18.357643Z	+ lucide-react 0.438.0
+2026-03-24T06:44:18.35767Z	+ media-icons 1.1.5
+2026-03-24T06:44:18.357701Z	+ next 14.2.30
+2026-03-24T06:44:18.357731Z	+ next-pwa 5.6.0
+2026-03-24T06:44:18.357761Z	+ next-themes 0.4.6
+2026-03-24T06:44:18.357789Z	+ react 18.3.1
+2026-03-24T06:44:18.357817Z	+ react-dom 18.3.1
+2026-03-24T06:44:18.35785Z	+ react-icons 5.5.0
+2026-03-24T06:44:18.357887Z	+ redis 4.7.1
+2026-03-24T06:44:18.357919Z	+ sweetalert2 11.22.2
+2026-03-24T06:44:18.357962Z	+ swiper 11.2.8
+2026-03-24T06:44:18.358001Z	+ tailwind-merge 2.6.0
+2026-03-24T06:44:18.358031Z	+ vidstack 0.6.15
+2026-03-24T06:44:18.358069Z	+ zod 3.25.67
+2026-03-24T06:44:18.358103Z	
+2026-03-24T06:44:18.358131Z	devDependencies:
+2026-03-24T06:44:18.358161Z	+ @commitlint/cli 16.3.0
+2026-03-24T06:44:18.35819Z	+ @commitlint/config-conventional 16.2.4
+2026-03-24T06:44:18.358217Z	+ @svgr/webpack 8.1.0
+2026-03-24T06:44:18.358245Z	+ @tailwindcss/forms 0.5.10
+2026-03-24T06:44:18.358275Z	+ @testing-library/jest-dom 5.17.0
+2026-03-24T06:44:18.358303Z	+ @testing-library/react 15.0.7
+2026-03-24T06:44:18.35833Z	+ @types/bs58 5.0.0
+2026-03-24T06:44:18.358362Z	+ @types/he 1.2.3
+2026-03-24T06:44:18.35839Z	+ @types/node 24.0.3
+2026-03-24T06:44:18.358417Z	+ @types/react 18.3.23
+2026-03-24T06:44:18.358444Z	+ @types/react-dom 19.1.6
+2026-03-24T06:44:18.358479Z	+ @types/testing-library__jest-dom 5.14.9
+2026-03-24T06:44:18.358525Z	+ @typescript-eslint/eslint-plugin 5.62.0
+2026-03-24T06:44:18.358569Z	+ @typescript-eslint/parser 5.62.0
+2026-03-24T06:44:18.358602Z	+ autoprefixer 10.4.21
+2026-03-24T06:44:18.358653Z	+ eslint 8.57.1
+2026-03-24T06:44:18.358708Z	+ eslint-config-next 14.2.30
+2026-03-24T06:44:18.358738Z	+ eslint-config-prettier 8.10.0
+2026-03-24T06:44:18.358764Z	+ eslint-plugin-simple-import-sort 7.0.0
+2026-03-24T06:44:18.35879Z	+ eslint-plugin-unused-imports 2.0.0
+2026-03-24T06:44:18.358824Z	+ husky 7.0.4
+2026-03-24T06:44:18.358851Z	+ jest 27.5.1
+2026-03-24T06:44:18.358883Z	+ lint-staged 12.5.0
+2026-03-24T06:44:18.358911Z	+ next-router-mock 0.9.13
+2026-03-24T06:44:18.358937Z	+ postcss 8.5.6
+2026-03-24T06:44:18.358969Z	+ prettier 2.8.8
+2026-03-24T06:44:18.358995Z	+ prettier-plugin-tailwindcss 0.5.14
+2026-03-24T06:44:18.35902Z	+ tailwindcss 3.4.17
+2026-03-24T06:44:18.359046Z	+ typescript 4.9.5
+2026-03-24T06:44:18.359079Z	+ webpack-obfuscator 3.6.0
+2026-03-24T06:44:18.359115Z	
+2026-03-24T06:44:18.359171Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-03-24T06:44:18.359219Z	│                                                                              │
+2026-03-24T06:44:18.359256Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
+2026-03-24T06:44:18.359285Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-03-24T06:44:18.359312Z	│   to run scripts.                                                            │
+2026-03-24T06:44:18.359339Z	│                                                                              │
+2026-03-24T06:44:18.359369Z	╰──────────────────────────────────────────────────────────────────────────────╯
+2026-03-24T06:44:18.359404Z	
+2026-03-24T06:44:18.407852Z	
+2026-03-24T06:44:18.408074Z	> moontv@0.1.0 prepare /opt/buildhome/repo
+2026-03-24T06:44:18.408182Z	> husky install
+2026-03-24T06:44:18.408269Z	
+2026-03-24T06:44:18.480287Z	husky - Git hooks installed
+2026-03-24T06:44:18.540256Z	Done in 11s using pnpm v10.12.4
+2026-03-24T06:44:19.529437Z	Executing user command: pnpm install --frozen-lockfile && pnpm run pages:build
+2026-03-24T06:44:20.561162Z	Lockfile is up to date, resolution step is skipped
+2026-03-24T06:44:20.816411Z	Already up to date
+2026-03-24T06:44:21.111654Z	
+2026-03-24T06:44:21.111919Z	╭ Warning ─────────────────────────────────────────────────────────────────────╮
+2026-03-24T06:44:21.111991Z	│                                                                              │
+2026-03-24T06:44:21.112044Z	│   Ignored build scripts: esbuild, sharp, unrs-resolver, workerd.             │
+2026-03-24T06:44:21.11209Z	│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+2026-03-24T06:44:21.112121Z	│   to run scripts.                                                            │
+2026-03-24T06:44:21.112163Z	│                                                                              │
+2026-03-24T06:44:21.112212Z	╰──────────────────────────────────────────────────────────────────────────────╯
+2026-03-24T06:44:21.112251Z	
+2026-03-24T06:44:21.130443Z	
+2026-03-24T06:44:21.130735Z	> moontv@0.1.0 prepare /opt/buildhome/repo
+2026-03-24T06:44:21.130894Z	> husky install
+2026-03-24T06:44:21.131354Z	
+2026-03-24T06:44:21.185506Z	husky - Git hooks installed
+2026-03-24T06:44:21.199736Z	Done in 1.4s using pnpm v10.12.4
+2026-03-24T06:44:21.653475Z	
+2026-03-24T06:44:21.65376Z	> moontv@0.1.0 pages:build /opt/buildhome/repo
+2026-03-24T06:44:21.653819Z	> pnpm gen:runtime && pnpm gen:manifest && next build && npx @cloudflare/next-on-pages --experimental-minify
+2026-03-24T06:44:21.653855Z	
+2026-03-24T06:44:22.001384Z	
+2026-03-24T06:44:22.001699Z	> moontv@0.1.0 gen:runtime /opt/buildhome/repo
+2026-03-24T06:44:22.001777Z	> node scripts/convert-config.js
+2026-03-24T06:44:22.001898Z	
+2026-03-24T06:44:22.045161Z	已生成 src/lib/runtime.ts
+2026-03-24T06:44:22.435706Z	
+2026-03-24T06:44:22.436021Z	> moontv@0.1.0 gen:manifest /opt/buildhome/repo
+2026-03-24T06:44:22.436081Z	> node scripts/generate-manifest.js
+2026-03-24T06:44:22.43612Z	
+2026-03-24T06:44:22.474978Z	✅ Generated manifest.json with site name: 星星影视
+2026-03-24T06:44:23.658585Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-03-24T06:44:23.66315Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2026-03-24T06:44:23.663256Z	This information is used to shape Next.js' roadmap and prioritize features.
+2026-03-24T06:44:23.663316Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2026-03-24T06:44:23.663357Z	https://nextjs.org/telemetry
+2026-03-24T06:44:23.663389Z	
+2026-03-24T06:44:23.734825Z	  ▲ Next.js 14.2.30
+2026-03-24T06:44:23.735112Z	
+2026-03-24T06:44:23.782908Z	   Creating an optimized production build ...
+2026-03-24T06:44:24.141598Z	> [PWA] PWA support is disabled
+2026-03-24T06:44:24.142237Z	> [PWA] PWA support is disabled
+2026-03-24T06:44:37.859374Z	Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+2026-03-24T06:44:37.859701Z	  npx update-browserslist-db@latest
+2026-03-24T06:44:37.859757Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2026-03-24T06:44:40.204257Z	Browserslist: caniuse-lite is outdated. Please run:
+2026-03-24T06:44:40.205417Z	  npx update-browserslist-db@latest
+2026-03-24T06:44:40.205557Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2026-03-24T06:44:43.22817Z	 ✓ Compiled successfully
+2026-03-24T06:44:43.229053Z	   Linting and checking validity of types ...
+2026-03-24T06:44:47.488395Z	
+2026-03-24T06:44:47.489624Z	Failed to compile.
+2026-03-24T06:44:47.49019Z	
+2026-03-24T06:44:47.490352Z	./src/app/api/live/channels/route.ts
+2026-03-24T06:44:47.490833Z	1:1  Warning: Run autofix to sort these imports!  simple-import-sort/imports
+2026-03-24T06:44:47.491072Z	45:9  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.491288Z	79:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.49149Z	
+2026-03-24T06:44:47.491721Z	./src/app/api/live/epg/route.ts
+2026-03-24T06:44:47.491837Z	64:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.491955Z	
+2026-03-24T06:44:47.492083Z	./src/app/api/live/precheck/route.ts
+2026-03-24T06:44:47.492202Z	52:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.492368Z	
+2026-03-24T06:44:47.492516Z	./src/app/api/live/sources/route.ts
+2026-03-24T06:44:47.492661Z	1:1  Warning: Run autofix to sort these imports!  simple-import-sort/imports
+2026-03-24T06:44:47.492849Z	1:10  Warning: 'NextRequest' is defined but never used.  unused-imports/no-unused-imports
+2026-03-24T06:44:47.493037Z	22:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.493231Z	
+2026-03-24T06:44:47.493336Z	./src/app/api/proxy/key/route.ts
+2026-03-24T06:44:47.493433Z	52:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.49348Z	
+2026-03-24T06:44:47.493514Z	./src/app/api/proxy/m3u8/route.ts
+2026-03-24T06:44:47.493548Z	62:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.493618Z	
+2026-03-24T06:44:47.493673Z	./src/app/api/proxy/segment/route.ts
+2026-03-24T06:44:47.493723Z	54:5  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.493769Z	
+2026-03-24T06:44:47.493817Z	./src/app/live/page.tsx
+2026-03-24T06:44:47.493866Z	3:1  Warning: Run autofix to sort these imports!  simple-import-sort/imports
+2026-03-24T06:44:47.493917Z	5:10  Warning: 'useVirtualList' is defined but never used.  unused-imports/no-unused-imports
+2026-03-24T06:44:47.493967Z	44:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494031Z	115:27  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+2026-03-24T06:44:47.494108Z	
+2026-03-24T06:44:47.494164Z	./src/lib/bangumi.client.ts
+2026-03-24T06:44:47.494213Z	81:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494278Z	106:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494364Z	129:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494396Z	137:69  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.494422Z	155:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.494455Z	157:42  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.494482Z	164:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494514Z	
+2026-03-24T06:44:47.494541Z	./src/lib/crypto.ts
+2026-03-24T06:44:47.494578Z	3:1  Warning: Run autofix to sort these imports!  simple-import-sort/imports
+2026-03-24T06:44:47.494621Z	26:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.494649Z	34:22  Error: Type number trivially inferred from a number literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.495241Z	66:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.495458Z	91:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.495666Z	99:23  Error: Type number trivially inferred from a number literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.495855Z	106:49  Error: Type number trivially inferred from a number literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.496021Z	166:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.496171Z	
+2026-03-24T06:44:47.496302Z	./src/lib/kvrocks.db.ts
+2026-03-24T06:44:47.496415Z	52:9  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.496557Z	57:9  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.496725Z	62:9  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.49684Z	68:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.496947Z	81:9  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.497057Z	101:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.49717Z	109:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497316Z	117:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497432Z	125:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497539Z	133:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497675Z	141:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497817Z	149:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.497977Z	157:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.498164Z	165:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.498323Z	173:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.498497Z	181:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.498668Z	189:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.498866Z	197:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.499054Z	205:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.49925Z	213:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.499524Z	221:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.499782Z	229:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.499928Z	237:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.50011Z	245:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.500459Z	253:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.500623Z	261:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.500759Z	269:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.500879Z	277:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.50101Z	285:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501207Z	293:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501332Z	301:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501444Z	307:71  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.501574Z	309:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501694Z	320:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501826Z	328:11  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.501938Z	336:11  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.502081Z	342:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.502189Z	344:12  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.502324Z	352:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.502484Z	360:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.502835Z	368:18  Warning: Forbidden non-null assertion.  @typescript-eslint/no-non-null-assertion
+2026-03-24T06:44:47.502977Z	
+2026-03-24T06:44:47.503043Z	./src/lib/live.ts
+2026-03-24T06:44:47.503073Z	169:45  Warning: 'sourceKey' is defined but never used. Allowed unused args must match /^_/u.  unused-imports/no-unused-vars
+2026-03-24T06:44:47.503101Z	171:28  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.503128Z	183:3  Warning: 'sourceKey' is defined but never used. Allowed unused args must match /^_/u.  unused-imports/no-unused-vars
+2026-03-24T06:44:47.503171Z	184:3  Warning: 'data' is defined but never used. Allowed unused args must match /^_/u.  unused-imports/no-unused-vars
+2026-03-24T06:44:47.503201Z	186:30  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.503227Z	
+2026-03-24T06:44:47.503253Z	./src/lib/password.ts
+2026-03-24T06:44:47.503279Z	40:33  Error: Type number trivially inferred from a number literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.503327Z	89:26  Error: Unnecessary escape character: \[.  no-useless-escape
+2026-03-24T06:44:47.503373Z	89:43  Error: Unnecessary escape character: \/.  no-useless-escape
+2026-03-24T06:44:47.503412Z	
+2026-03-24T06:44:47.503442Z	./src/lib/search-cache.ts
+2026-03-24T06:44:47.503469Z	7:12  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.503524Z	19:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.503552Z	39:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503578Z	47:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.503619Z	62:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503647Z	77:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503679Z	94:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503706Z	124:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503731Z	132:34  Error: Type number trivially inferred from a number literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.503763Z	132:34  Warning: 'limit' is assigned a value but never used. Allowed unused vars must match /^_/u.  unused-imports/no-unused-vars
+2026-03-24T06:44:47.503789Z	141:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503815Z	159:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.503841Z	184:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.504462Z	200:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.504594Z	208:67  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.504776Z	229:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.50489Z	236:68  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.505062Z	244:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+2026-03-24T06:44:47.505186Z	263:7  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.505417Z	
+2026-03-24T06:44:47.509323Z	./src/lib/time.ts
+2026-03-24T06:44:47.509392Z	68:3  Warning: Unexpected console statement.  no-console
+2026-03-24T06:44:47.509426Z	75:46  Error: Type string trivially inferred from a string literal, remove type annotation.  @typescript-eslint/no-inferrable-types
+2026-03-24T06:44:47.509462Z	
+2026-03-24T06:44:47.5095Z	info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+2026-03-24T06:44:47.605533Z	 ELIFECYCLE  Command failed with exit code 1.
+2026-03-24T06:44:47.642288Z	Failed: Error while executing user command. Exited with error code: 1
+2026-03-24T06:44:47.648236Z	Failed: build command exited with code: 1
+2026-03-24T06:44:49.096895Z	Failed: error occurred while running build command

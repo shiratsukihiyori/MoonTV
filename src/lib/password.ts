@@ -1,174 +1,63 @@
-// 密码管理工具
+import { randomBytes, scryptSync, timingSafeEqual } from 'crypto';
 
-import { CryptoUtils } from './crypto';
+const SALT_LENGTH = 16;
+const KEY_LENGTH = 64;
+const SCRYPT_COST = 16384; // N
+const BLOCK_SIZE = 8; // r
+const PARALLELIZATION = 1; // p
 
-export interface PasswordHash {
-  hash: string;
-  salt: string;
-  iterations: number;
+/**
+ * 对密码进行加盐哈希，返回格式: `salt:hash`
+ */
+export function hashPassword(password: string): string {
+  const salt = randomBytes(SALT_LENGTH).toString('hex');
+  const hash = scryptSync(password, salt, KEY_LENGTH, {
+    N: SCRYPT_COST,
+    r: BLOCK_SIZE,
+    p: PARALLELIZATION,
+  }).toString('hex');
+  return `${salt}:${hash}`;
 }
 
-export class PasswordUtils {
-  private static readonly DEFAULT_ITERATIONS = 10000;
-  private static readonly SALT_LENGTH = 32;
-
-  /**
-   * 哈希密码
-   */
-  static hashPassword(password: string, salt?: string): PasswordHash {
-    const passwordSalt = salt || CryptoUtils.generateSalt(this.SALT_LENGTH);
-    const hash = CryptoUtils.pbkdf2(password, passwordSalt, this.DEFAULT_ITERATIONS);
-
-    return {
-      hash,
-      salt: passwordSalt,
-      iterations: this.DEFAULT_ITERATIONS,
-    };
+/**
+ * 验证密码是否匹配存储的哈希值
+ * 支持两种格式:
+ * - 加盐哈希: `salt:hash` (新格式)
+ * - 明文密码: 不含 `:` 或长度不符合哈希格式 (旧格式，兼容迁移期)
+ */
+export function verifyPassword(
+  password: string,
+  storedValue: string
+): boolean {
+  // 判断是否为加盐哈希格式 (salt:hash, salt 32 hex chars, hash 128 hex chars)
+  const parts = storedValue.split(':');
+  if (
+    parts.length === 2 &&
+    parts[0].length === SALT_LENGTH * 2 &&
+    parts[1].length === KEY_LENGTH * 2
+  ) {
+    const [salt, storedHash] = parts;
+    const hash = scryptSync(password, salt, KEY_LENGTH, {
+      N: SCRYPT_COST,
+      r: BLOCK_SIZE,
+      p: PARALLELIZATION,
+    });
+    const storedHashBuf = Buffer.from(storedHash, 'hex');
+    return timingSafeEqual(hash, storedHashBuf);
   }
 
-  /**
-   * 验证密码
-   */
-  static verifyPassword(password: string, storedHash: PasswordHash): boolean {
-    const computedHash = CryptoUtils.pbkdf2(password, storedHash.salt, storedHash.iterations);
-    return computedHash === storedHash.hash;
-  }
+  // 旧格式：明文密码直接比较（兼容未迁移的数据）
+  return storedValue === password;
+}
 
-  /**
-   * 生成随机密码
-   */
-  static generateRandomPassword(length: number = 12): string {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-      result += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return result;
-  }
-
-  /**
-   * 验证密码强度
-   */
-  static validatePasswordStrength(password: string): {
-    isValid: boolean;
-    score: number;
-    feedback: string[];
-  } {
-    const feedback: string[] = [];
-    let score = 0;
-
-    // 检查长度
-    if (password.length >= 8) {
-      score += 1;
-    } else {
-      feedback.push('密码长度至少8位');
-    }
-
-    // 检查大写字母
-    if (/[A-Z]/.test(password)) {
-      score += 1;
-    } else {
-      feedback.push('应包含大写字母');
-    }
-
-    // 检查小写字母
-    if (/[a-z]/.test(password)) {
-      score += 1;
-    } else {
-      feedback.push('应包含小写字母');
-    }
-
-    // 检查数字
-    if (/\d/.test(password)) {
-      score += 1;
-    } else {
-      feedback.push('应包含数字');
-    }
-
-    // 检查特殊字符
-    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-      score += 1;
-    } else {
-      feedback.push('应包含特殊字符');
-    }
-
-    // 检查常见弱密码
-    const commonPasswords = ['password', '123456', 'admin', 'root', 'qwerty'];
-    if (commonPasswords.includes(password.toLowerCase())) {
-      score = 0;
-      feedback.push('密码过于常见');
-    }
-
-    // 检查连续字符
-    if (/(.)\1{2,}/.test(password)) {
-      score = Math.max(0, score - 1);
-      feedback.push('不应包含重复字符');
-    }
-
-    const isValid = score >= 3;
-
-    return {
-      isValid,
-      score,
-      feedback,
-    };
-  }
-
-  /**
-   * 生成密码重置令牌
-   */
-  static generateResetToken(): string {
-    return CryptoUtils.generateUUID() + CryptoUtils.generateUUID();
-  }
-
-  /**
-   * 加密敏感数据（用于存储）
-   */
-  static encryptSensitiveData(data: string): string {
-    return CryptoUtils.encrypt(data, process.env.PASSWORD_ENCRYPTION_KEY || 'default-password-key');
-  }
-
-  /**
-   * 解密敏感数据
-   */
-  static decryptSensitiveData(encryptedData: string): string {
-    return CryptoUtils.decrypt(encryptedData, process.env.PASSWORD_ENCRYPTION_KEY || 'default-password-key');
-  }
-
-  /**
-   * 安全比较字符串（防止时序攻击）
-   */
-  static secureCompare(a: string, b: string): boolean {
-    if (a.length !== b.length) {
-      return false;
-    }
-
-    let result = 0;
-    for (let i = 0; i < a.length; i++) {
-      result |= a.charCodeAt(i) ^ b.charCodeAt(i);
-    }
-
-    return result === 0;
-  }
-
-  /**
-   * 生成密码强度指示器
-   */
-  static getPasswordStrengthIndicator(password: string): {
-    strength: 'weak' | 'medium' | 'strong' | 'very-strong';
-    color: string;
-    percentage: number;
-  } {
-    const { score } = this.validatePasswordStrength(password);
-
-    if (score <= 1) {
-      return { strength: 'weak', color: '#ff4444', percentage: 25 };
-    } else if (score <= 2) {
-      return { strength: 'medium', color: '#ffaa00', percentage: 50 };
-    } else if (score <= 3) {
-      return { strength: 'strong', color: '#00aa44', percentage: 75 };
-    } else {
-      return { strength: 'very-strong', color: '#00aa44', percentage: 100 };
-    }
-  }
+/**
+ * 判断存储的密码值是否已经是加盐哈希格式
+ */
+export function isHashed(storedValue: string): boolean {
+  const parts = storedValue.split(':');
+  return (
+    parts.length === 2 &&
+    parts[0].length === SALT_LENGTH * 2 &&
+    parts[1].length === KEY_LENGTH * 2
+  );
 }

@@ -44,7 +44,11 @@ export class SearchCache {
   /**
    * 设置搜索结果缓存
    */
-  static async set(query: string, results: any[], ttl: number = this.DEFAULT_TTL): Promise<void> {
+  static async set(
+    query: string,
+    results: any[],
+    ttl: number = this.DEFAULT_TTL
+  ): Promise<void> {
     try {
       const client = getRedisClient();
       if (!client) return;
@@ -129,7 +133,9 @@ export class SearchCache {
   /**
    * 获取热门搜索查询
    */
-  static async getPopularQueries(limit: number = 10): Promise<Array<{ query: string; count: number }>> {
+  static async getPopularQueries(
+    limit = 10
+  ): Promise<Array<{ query: string; count: number }>> {
     try {
       const client = getRedisClient();
       if (!client) return [];
@@ -205,7 +211,9 @@ export class SearchCache {
   /**
    * 批量设置多个缓存项
    */
-  static async setMultiple(items: Array<{ query: string; results: any[]; ttl?: number }>): Promise<void> {
+  static async setMultiple(
+    items: Array<{ query: string; results: any[]; ttl?: number }>
+  ): Promise<void> {
     try {
       const client = getRedisClient();
       if (!client) return;
@@ -221,7 +229,11 @@ export class SearchCache {
           ttl: item.ttl || this.DEFAULT_TTL,
         };
 
-        pipeline.setex(key, item.ttl || this.DEFAULT_TTL, JSON.stringify(cacheItem));
+        pipeline.setex(
+          key,
+          item.ttl || this.DEFAULT_TTL,
+          JSON.stringify(cacheItem)
+        );
       }
 
       await pipeline.exec();
@@ -238,7 +250,7 @@ export class SearchCache {
       const client = getRedisClient();
       if (!client) return new Map();
 
-      const keys = queries.map(query => this.getCacheKey(query));
+      const keys = queries.map((query) => this.getCacheKey(query));
       const values = await client.mget(...keys);
 
       const result = new Map<string, any[]>();
