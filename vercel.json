@@ -1,4 +1,7 @@
 {
+  "buildCommand": "pnpm build",
+  "installCommand": "corepack enable && corepack prepare pnpm@10.12.4 --activate",
+  "framework": "nextjs",
   "headers": [
     {
       "source": "/fonts/inter-var-latin.woff2",

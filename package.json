@@ -2,6 +2,10 @@
   "name": "moontv",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "pnpm gen:runtime && pnpm gen:manifest && next dev -H 0.0.0.0",
     "build": "pnpm gen:runtime && pnpm gen:manifest && TSC_COMPILE_ON_BUILD=false next build --no-lint",
