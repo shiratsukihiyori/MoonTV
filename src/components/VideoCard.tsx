@@ -1,10 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { CheckCircle, Heart, Link, PlayCircleIcon } from 'lucide-react';
+import {
+  CheckCircle,
+  Heart,
+  Link,
+  Loader2,
+  PlayCircleIcon,
+} from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
+import { warmDetail, warmSearch } from '@/lib/clientCache';
 import {
   deleteFavorite,
   deletePlayRecord,
@@ -58,6 +71,8 @@ export default function VideoCard({
   const router = useRouter();
   const [favorited, setFavorited] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [opening, setOpening] = useState(false);
+  const hoverTimerRef = useRef<number | null>(null);
 
   const isAggregate = from === 'search' && !!items?.length;
 
@@ -195,35 +210,77 @@ export default function VideoCard({
     [from, actualSource, actualId, onDelete]
   );
 
-  const handleClick = useCallback(() => {
+  // 点击目标 URL(参数统一编码;跳转与悬浮预取共用同一份)
+  const playUrl = useMemo(() => {
     if (from === 'douban') {
-      router.push(
-        `/play?title=${encodeURIComponent(actualTitle.trim())}${
-          actualYear ? `&year=${actualYear}` : ''
-        }${actualSearchType ? `&stype=${actualSearchType}` : ''}`
-      );
-    } else if (actualSource && actualId) {
-      router.push(
-        `/play?source=${actualSource}&id=${actualId}&title=${encodeURIComponent(
-          actualTitle
-        )}${actualYear ? `&year=${actualYear}` : ''}${
-          isAggregate ? '&prefer=true' : ''
-        }${
-          actualQuery ? `&stitle=${encodeURIComponent(actualQuery.trim())}` : ''
-        }${actualSearchType ? `&stype=${actualSearchType}` : ''}`
-      );
+      return `/play?title=${encodeURIComponent(actualTitle.trim())}${
+        actualYear ? `&year=${encodeURIComponent(actualYear)}` : ''
+      }${
+        actualSearchType ? `&stype=${encodeURIComponent(actualSearchType)}` : ''
+      }`;
     }
+    if (actualSource && actualId) {
+      return `/play?source=${encodeURIComponent(
+        actualSource
+      )}&id=${encodeURIComponent(actualId)}&title=${encodeURIComponent(
+        actualTitle
+      )}${actualYear ? `&year=${encodeURIComponent(actualYear)}` : ''}${
+        isAggregate ? '&prefer=true' : ''
+      }${
+        actualQuery ? `&stitle=${encodeURIComponent(actualQuery.trim())}` : ''
+      }${
+        actualSearchType ? `&stype=${encodeURIComponent(actualSearchType)}` : ''
+      }`;
+    }
+    return '';
   }, [
     from,
-    actualSource,
-    actualId,
-    router,
     actualTitle,
     actualYear,
+    actualSearchType,
+    actualSource,
+    actualId,
     isAggregate,
     actualQuery,
-    actualSearchType,
   ]);
+
+  const handleClick = useCallback(() => {
+    if (!playUrl || opening) return;
+    setOpening(true);
+    // 兜底:导航异常时 6 秒后恢复可点状态
+    window.setTimeout(() => setOpening(false), 6000);
+    router.push(playUrl);
+  }, [playUrl, opening, router]);
+
+  // 悬浮预热:停留 150ms 后再悄悄拉数据,点下去时命中缓存直接开播
+  const handleMouseEnter = useCallback(() => {
+    if (hoverTimerRef.current) window.clearTimeout(hoverTimerRef.current);
+    hoverTimerRef.current = window.setTimeout(() => {
+      if (playUrl) router.prefetch(playUrl);
+      if (from === 'douban') {
+        warmSearch(actualTitle);
+      } else if (actualSource && actualId) {
+        warmDetail(actualSource, actualId);
+        if (isAggregate && actualQuery) warmSearch(actualQuery);
+      }
+    }, 150);
+  }, [
+    playUrl,
+    router,
+    from,
+    actualTitle,
+    actualSource,
+    actualId,
+    isAggregate,
+    actualQuery,
+  ]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (hoverTimerRef.current) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  }, []);
 
   const config = useMemo(() => {
     const configs = {
@@ -269,8 +326,10 @@ export default function VideoCard({
 
   return (
     <div
-      className='group relative w-full rounded-lg bg-transparent cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.05] hover:z-[500]'
+      className='group relative w-full cursor-pointer rounded-lg bg-transparent transition-all duration-300 ease-out hover:z-20 hover:-translate-y-1 hover:drop-shadow-[0_12px_26px_rgba(0,0,0,0.45)] active:scale-[0.98]'
       onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* 海报容器 */}
       <div className='relative aspect-[2/3] overflow-hidden rounded-lg'>
@@ -302,7 +361,7 @@ export default function VideoCard({
 
         {/* 操作按钮 */}
         {(config.showHeart || config.showCheckCircle) && (
-          <div className='absolute bottom-3 right-3 flex gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0'>
+          <div className='touch-visible absolute bottom-3 right-3 flex gap-3 opacity-0 translate-y-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0'>
             {config.showCheckCircle && (
               <CheckCircle
                 onClick={handleDeleteRecord}
@@ -346,12 +405,20 @@ export default function VideoCard({
             target='_blank'
             rel='noopener noreferrer'
             onClick={(e) => e.stopPropagation()}
-            className='absolute top-2 left-2 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out delay-100 group-hover:opacity-100 group-hover:translate-x-0'
+            className='touch-visible absolute top-2 left-2 opacity-0 -translate-x-2 transition-all duration-300 ease-in-out delay-100 group-hover:opacity-100 group-hover:translate-x-0'
           >
             <div className='bg-green-500 text-white text-xs font-bold w-7 h-7 rounded-full flex items-center justify-center shadow-md hover:bg-green-600 hover:scale-[1.1] transition-all duration-300 ease-out'>
               <Link size={16} />
             </div>
           </a>
+        )}
+
+        {/* 打开中反馈 */}
+        {opening && (
+          <div className='absolute inset-0 z-30 flex flex-col items-center justify-center gap-2 bg-black/60'>
+            <Loader2 className='h-7 w-7 animate-spin text-white' />
+            <span className='text-xs text-white/90'>打开中…</span>
+          </div>
         )}
       </div>
 

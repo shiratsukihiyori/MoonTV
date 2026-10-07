@@ -70,6 +70,14 @@ html:not(.dark) body {
   transform: scale(1.05);
 }
 
+/* 触屏设备(无 hover):仅悬浮可见的元素直接常显,避免"点一下粘住"的错觉 */
+@media (hover: none) {
+  .touch-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* 渐变遮罩 */
 .gradient-overlay {
   background: linear-gradient(
