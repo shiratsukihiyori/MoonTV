@@ -16,7 +16,15 @@ const config: Config = {
         },
       },
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        primary: [
+          'var(--font-inter)',
+          'Inter',
+          'PingFang SC',
+          'Hiragino Sans GB',
+          'Microsoft YaHei',
+          'Noto Sans SC',
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       colors: {
         primary: {
@@ -32,6 +40,23 @@ const config: Config = {
           900: '#0c4a6e',
         },
         dark: '#222222',
+        // 影院夜色:深空蓝黑的分层表面
+        night: {
+          950: '#070a12',
+          900: '#0b0f1a',
+          850: '#101623',
+          800: '#151d2e',
+          700: '#1e2940',
+          600: '#2a3854',
+          500: '#3b4a6b',
+        },
+        // 评分金
+        gold: {
+          300: '#f8d47c',
+          400: '#f5c451',
+          500: '#e8ab2e',
+          600: '#c98d1c',
+        },
       },
       keyframes: {
         flicker: {

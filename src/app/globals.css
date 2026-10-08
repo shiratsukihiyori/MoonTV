@@ -14,7 +14,7 @@
 }
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 232, 237, 247;
 }
 
 html,
@@ -27,18 +27,39 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: var(--font-inter), Inter, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
 }
 
 html:not(.dark) body {
   background: linear-gradient(
     180deg,
-    #e6f3fb 0%,
-    #eaf3f7 18%,
-    #f7f7f3 38%,
-    #e9ecef 60%,
-    #dbe3ea 80%,
-    #d3dde6 100%
+    #eef2f7 0%,
+    #f2f5f9 30%,
+    #f6f7fa 60%,
+    #eceff5 100%
   );
+  background-attachment: fixed;
+  color: #1f2733;
+}
+
+/* 影院夜色:深空蓝黑 + 荧幕蓝/金 微光 */
+html.dark body {
+  background: radial-gradient(
+      1100px 520px at 78% -8%,
+      rgba(56, 189, 248, 0.1),
+      transparent 62%
+    ),
+    radial-gradient(
+      900px 480px at 8% 108%,
+      rgba(232, 171, 46, 0.06),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #0a0e18 0%, #0b101c 55%, #070a12 100%);
   background-attachment: fixed;
 }
 

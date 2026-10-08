@@ -154,8 +154,8 @@ function LoginPageClient() {
       <div className='absolute top-4 right-4'>
         <ThemeToggle />
       </div>
-      <div className='relative z-10 w-full max-w-md rounded-3xl bg-gradient-to-b from-white/90 via-white/70 to-white/40 dark:from-zinc-900/90 dark:via-zinc-900/70 dark:to-zinc-900/40 backdrop-blur-xl shadow-2xl p-10 dark:border dark:border-zinc-800'>
-        <h1 className='text-green-600 tracking-tight text-center text-3xl font-extrabold mb-8 bg-clip-text drop-shadow-sm'>
+      <div className='relative z-10 w-full max-w-md rounded-3xl bg-gradient-to-b from-white/95 via-white/80 to-white/60 dark:from-night-850/95 dark:via-night-850/85 dark:to-night-900/75 backdrop-blur-xl shadow-[0_40px_120px_-40px_rgba(0,0,0,0.95)] p-10 border border-white/60 dark:border-white/10'>
+        <h1 className='tracking-tight text-center text-3xl font-extrabold mb-8 bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent dark:from-sky-300 dark:to-blue-400'>
           {siteName}
         </h1>
         <form onSubmit={handleSubmit} className='space-y-8'>
@@ -168,7 +168,7 @@ function LoginPageClient() {
                 id='username'
                 type='text'
                 autoComplete='username'
-                className='block w-full rounded-lg border-0 py-3 px-4 text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-white/60 dark:ring-white/20 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:ring-2 focus:ring-green-500 focus:outline-none sm:text-base bg-white/60 dark:bg-zinc-800/60 backdrop-blur'
+                className='block w-full rounded-xl border-0 py-3 px-4 text-gray-900 dark:text-slate-100 shadow-sm ring-1 ring-white/60 dark:ring-white/15 placeholder:text-gray-500 dark:placeholder:text-slate-500 focus:ring-2 focus:ring-sky-500 focus:outline-none sm:text-base bg-white/60 dark:bg-night-800/70 backdrop-blur'
                 placeholder='输入用户名'
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -202,7 +202,7 @@ function LoginPageClient() {
                 type='button'
                 onClick={handleRegister}
                 disabled={!password || !username || loading}
-                className='flex-1 inline-flex justify-center rounded-lg bg-blue-600 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50'
+                className='flex-1 inline-flex justify-center rounded-xl border border-sky-500/40 py-3 text-base font-semibold text-sky-600 dark:text-sky-300 shadow-lg transition-all duration-200 hover:bg-sky-500/10 disabled:cursor-not-allowed disabled:opacity-50'
               >
                 {loading ? '注册中...' : '注册'}
               </button>
@@ -211,7 +211,7 @@ function LoginPageClient() {
                 disabled={
                   !password || loading || (shouldAskUsername && !username)
                 }
-                className='flex-1 inline-flex justify-center rounded-lg bg-green-600 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:from-green-600 hover:to-blue-600 disabled:cursor-not-allowed disabled:opacity-50'
+                className='flex-1 inline-flex justify-center rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50'
               >
                 {loading ? '登录中...' : '登录'}
               </button>
@@ -222,7 +222,7 @@ function LoginPageClient() {
               disabled={
                 !password || loading || (shouldAskUsername && !username)
               }
-              className='inline-flex w-full justify-center rounded-lg bg-green-600 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:from-green-600 hover:to-blue-600 disabled:cursor-not-allowed disabled:opacity-50'
+              className='inline-flex w-full justify-center rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 py-3 text-base font-semibold text-white shadow-lg transition-all duration-200 hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50'
             >
               {loading ? '登录中...' : '登录'}
             </button>
