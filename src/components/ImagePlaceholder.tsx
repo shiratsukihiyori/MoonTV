@@ -24,14 +24,14 @@ const ImagePlaceholder = ({ aspectRatio }: { aspectRatio: string }) => (
       /* 暗色模式变量 */
       @media (prefers-color-scheme: dark) {
         :root {
-          --skeleton-color: #2d2d2d;
-          --skeleton-highlight: #3d3d3d;
+          --skeleton-color: #141d31;
+          --skeleton-highlight: #1e2b45;
         }
       }
       
       .dark {
-        --skeleton-color: #2d2d2d;
-        --skeleton-highlight: #3d3d3d;
+        --skeleton-color: #141d31;
+        --skeleton-highlight: #1e2b45;
       }
     `}</style>
   </div>
