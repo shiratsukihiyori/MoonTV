@@ -168,7 +168,7 @@ function HomeClient() {
             // 收藏夹视图
             <section className='mb-8'>
               <div className='mb-4 flex items-center justify-between'>
-                <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                <h2 className='text-xl font-bold text-gray-800 dark:text-slate-100'>
                   我的收藏
                 </h2>
                 {favoriteItems.length > 0 && (
@@ -212,46 +212,74 @@ function HomeClient() {
                   href='https://ai.xyby.dpdns.org/v1.0.0.apk'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center rounded-lg bg-gray-400 px-3 py-2 text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 text-sm relative group'
+                  className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10 relative group'
                   title='不推荐使用APK版本'
                 >
                   <span>APK下载</span>
-                  <span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5'>不推荐</span>
+                  <span className='absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2 py-0.5'>
+                    不推荐
+                  </span>
                 </a>
                 <div className='relative group'>
                   <a
                     href='https://github.com/xingyuanbaoyue/MoonTV/releases/download/v1.0.0/win32-x64.exe'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='inline-flex items-center rounded-lg bg-blue-600 px-3 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-sm'
+                    className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10'
                   >
                     Windows客户端
                   </a>
-                  <div className='absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none'>
-                    <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-gray-800 transform rotate-45'></div>
+                  <div className='absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 bg-night-800 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none'>
+                    <div className='absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-night-800 transform rotate-45'></div>
                     国内用户可能需要加速GitHub
                   </div>
                 </div>
                 <div className='relative group'>
-                  <button className='inline-flex items-center rounded-lg bg-purple-600 px-3 py-2 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 text-sm'>
-                    <svg className='w-4 h-4 mr-1' viewBox='0 0 24 24' fill='currentColor'>
-                      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/>
+                  <button className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10'>
+                    <svg
+                      className='w-4 h-4 mr-1'
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                    >
+                      <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z' />
                     </svg>
                     Anime4K 增强
-                    <svg className='w-4 h-4 ml-1' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M19 9l-7 7-7-7'></path></svg>
+                    <svg
+                      className='w-4 h-4 ml-1'
+                      fill='none'
+                      stroke='currentColor'
+                      viewBox='0 0 24 24'
+                      xmlns='http://www.w3.org/2000/svg'
+                    >
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='2'
+                        d='M19 9l-7 7-7-7'
+                      ></path>
+                    </svg>
                   </button>
-                  <div className='absolute left-0 mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-auto'>
-                    <div className='py-1' role='menu' aria-orientation='vertical' aria-labelledby='options-menu'>
+                  <div className='absolute left-0 mt-1 w-56 rounded-md shadow-lg bg-white dark:bg-night-800 ring-1 ring-black ring-opacity-5 dark:ring-white/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-auto'>
+                    <div
+                      className='py-1'
+                      role='menu'
+                      aria-orientation='vertical'
+                      aria-labelledby='options-menu'
+                    >
                       <a
                         href='https://microsoftedge.microsoft.com/addons/detail/anime4k-webextension/ffopffngebibpmeodlhhkdlaejnmdlam'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 flex items-center'
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-white/10 flex items-center'
                         role='menuitem'
                       >
                         <span className='inline-flex items-center justify-center w-5 h-5 mr-2'>
-                          <svg className='w-4 h-4' viewBox='0 0 16 16' fill='currentColor'>
-                            <path d='M7.5 0c-2.2 0-4 1.8-4 4 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.8-4-4-4zm0 7c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-7-3c0 3.9 3.1 7 7 7s7-3.1 7-7-3.1-7-7-7-7 3.1-7 7z'/>
+                          <svg
+                            className='w-4 h-4'
+                            viewBox='0 0 16 16'
+                            fill='currentColor'
+                          >
+                            <path d='M7.5 0c-2.2 0-4 1.8-4 4 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.8-4-4-4zm0 7c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm-7-3c0 3.9 3.1 7 7 7s7-3.1 7-7-3.1-7-7-7-7 3.1-7 7z' />
                           </svg>
                         </span>
                         Edge 插件
@@ -260,12 +288,16 @@ function HomeClient() {
                         href='https://chromewebstore.google.com/detail/anime4k-webextension/hpmbccepehpoanjpjkamfdpdkbmfmhek'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 flex items-center'
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-white/10 flex items-center'
                         role='menuitem'
                       >
                         <span className='inline-flex items-center justify-center w-5 h-5 mr-2'>
-                          <svg className='w-4 h-4' viewBox='0 0 24 24' fill='currentColor'>
-                            <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/>
+                          <svg
+                            className='w-4 h-4'
+                            viewBox='0 0 24 24'
+                            fill='currentColor'
+                          >
+                            <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z' />
                           </svg>
                         </span>
                         Chrome 插件
@@ -274,12 +306,16 @@ function HomeClient() {
                         href='https://addons.mozilla.org/zh-CN/firefox/addon/anime4k-webextension/'
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 flex items-center'
+                        className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-slate-200 dark:hover:bg-white/10 flex items-center'
                         role='menuitem'
                       >
                         <span className='inline-flex items-center justify-center w-5 h-5 mr-2'>
-                          <svg className='w-4 h-4' viewBox='0 0 24 24' fill='currentColor'>
-                            <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/>
+                          <svg
+                            className='w-4 h-4'
+                            viewBox='0 0 24 24'
+                            fill='currentColor'
+                          >
+                            <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z' />
                           </svg>
                         </span>
                         Firefox 插件
@@ -292,18 +328,33 @@ function HomeClient() {
                 </p>
                 <p className='text-xs text-yellow-600 dark:text-yellow-400 mb-2 text-center'>
                   如果下载失败，请尝试：
-                  <br />1. 右键复制链接地址，在新窗口打开下载
-                  <br />2. 使用多线程下载工具（如 <a href='https://www.neatdownloadmanager.com/index.php/en/' target='_blank' rel='noopener noreferrer' className='underline'>Neat Download Manager</a>）下载
+                  <br />
+                  1. 右键复制链接地址，在新窗口打开下载
+                  <br />
+                  2. 使用多线程下载工具（如{' '}
+                  <a
+                    href='https://www.neatdownloadmanager.com/index.php/en/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='underline'
+                  >
+                    Neat Download Manager
+                  </a>
+                  ）下载
                 </p>
                 <a
                   href='http://hiyori.webn.cc/Anime4K.zip'
                   download='Anime4K.zip'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center rounded-lg bg-green-600 px-3 py-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm mb-2 cursor-pointer'
+                  className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10 mb-2 cursor-pointer'
                 >
-                  <svg className='w-4 h-4 mr-1' viewBox='0 0 24 24' fill='currentColor'>
-                    <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z'/>
+                  <svg
+                    className='w-4 h-4 mr-1'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                  >
+                    <path d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z' />
                   </svg>
                   Anime4K 下载
                 </a>
@@ -311,10 +362,14 @@ function HomeClient() {
                   href='https://github.com/xingyuanbaoyue/MoonTV'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='inline-flex items-center rounded-lg bg-gray-800 px-3 py-2 text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-2 text-sm'
+                  className='inline-flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10'
                 >
-                  <svg className='w-4 h-4 mr-1' viewBox='0 0 24 24' fill='currentColor'>
-                    <path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/>
+                  <svg
+                    className='w-4 h-4 mr-1'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                  >
+                    <path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12' />
                   </svg>
                   GitHub
                 </Link>
@@ -323,12 +378,12 @@ function HomeClient() {
               {/* 热门电影 */}
               <section className='mb-8'>
                 <div className='mb-4 flex items-center justify-between'>
-                  <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                  <h2 className='text-xl font-bold text-gray-800 dark:text-slate-100'>
                     热门电影
                   </h2>
                   <Link
                     href='/douban?type=movie'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sky-600 dark:text-slate-400 dark:hover:text-sky-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -342,10 +397,10 @@ function HomeClient() {
                           key={index}
                           className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                         >
-                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                            <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-night-800'>
+                            <div className='absolute inset-0 bg-gray-300 dark:bg-night-700'></div>
                           </div>
-                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-night-800'></div>
                         </div>
                       ))
                     : // 显示真实数据
@@ -371,12 +426,12 @@ function HomeClient() {
               {/* 热门剧集 */}
               <section className='mb-8'>
                 <div className='mb-4 flex items-center justify-between'>
-                  <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                  <h2 className='text-xl font-bold text-gray-800 dark:text-slate-100'>
                     热门剧集
                   </h2>
                   <Link
                     href='/douban?type=tv'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sky-600 dark:text-slate-400 dark:hover:text-sky-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -390,10 +445,10 @@ function HomeClient() {
                           key={index}
                           className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                         >
-                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                            <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-night-800'>
+                            <div className='absolute inset-0 bg-gray-300 dark:bg-night-700'></div>
                           </div>
-                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-night-800'></div>
                         </div>
                       ))
                     : // 显示真实数据
@@ -418,12 +473,12 @@ function HomeClient() {
               {/* 热门综艺 */}
               <section className='mb-8'>
                 <div className='mb-4 flex items-center justify-between'>
-                  <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                  <h2 className='text-xl font-bold text-gray-800 dark:text-slate-100'>
                     热门综艺
                   </h2>
                   <Link
                     href='/douban?type=show'
-                    className='flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                    className='flex items-center text-sm text-gray-500 hover:text-sky-600 dark:text-slate-400 dark:hover:text-sky-300'
                   >
                     查看更多
                     <ChevronRight className='w-4 h-4 ml-1' />
@@ -437,10 +492,10 @@ function HomeClient() {
                           key={index}
                           className='min-w-[96px] w-24 sm:min-w-[180px] sm:w-44'
                         >
-                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-gray-800'>
-                            <div className='absolute inset-0 bg-gray-300 dark:bg-gray-700'></div>
+                          <div className='relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-200 animate-pulse dark:bg-night-800'>
+                            <div className='absolute inset-0 bg-gray-300 dark:bg-night-700'></div>
                           </div>
-                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-gray-800'></div>
+                          <div className='mt-2 h-4 bg-gray-200 rounded animate-pulse dark:bg-night-800'></div>
                         </div>
                       ))
                     : // 显示真实数据
@@ -471,9 +526,9 @@ function HomeClient() {
             showAnnouncement ? '' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <div className='w-full max-w-md rounded-xl bg-white p-6 shadow-xl dark:bg-gray-900 transform transition-all duration-300 hover:shadow-2xl'>
+          <div className='w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-night-850 dark:shadow-[0_40px_120px_-40px_rgba(0,0,0,0.95)] transform transition-all duration-300'>
             <div className='flex justify-between items-start mb-4'>
-              <h3 className='text-2xl font-bold tracking-tight text-gray-800 dark:text-white border-b border-green-500 pb-1'>
+              <h3 className='text-2xl font-bold tracking-tight text-gray-800 dark:text-white border-b border-sky-500 pb-1'>
                 提示
               </h3>
               <button
@@ -483,8 +538,8 @@ function HomeClient() {
               ></button>
             </div>
             <div className='mb-6'>
-              <div className='relative overflow-hidden rounded-lg mb-4 bg-green-50 dark:bg-green-900/20'>
-                <div className='absolute inset-y-0 left-0 w-1.5 bg-green-500 dark:bg-green-400'></div>
+              <div className='relative overflow-hidden rounded-lg mb-4 bg-sky-50 dark:bg-sky-900/20'>
+                <div className='absolute inset-y-0 left-0 w-1.5 bg-sky-500 dark:bg-sky-400'></div>
                 <p className='ml-4 text-gray-600 dark:text-gray-300 leading-relaxed'>
                   {announcement}
                 </p>
@@ -492,7 +547,7 @@ function HomeClient() {
             </div>
             <button
               onClick={() => handleCloseAnnouncement(announcement)}
-              className='w-full rounded-lg bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 text-white font-medium shadow-md hover:shadow-lg hover:from-green-700 hover:to-green-800 dark:from-green-600 dark:to-green-700 dark:hover:from-green-700 dark:hover:to-green-800 transition-all duration-300 transform hover:-translate-y-0.5'
+              className='w-full rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-3 text-white font-medium shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 transform hover:-translate-y-0.5'
             >
               我知道了
             </button>
